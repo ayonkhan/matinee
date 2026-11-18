@@ -1,0 +1,5 @@
+@import "tailwindcss";
+@import "../src/theme.css";
+
+/* Tell Tailwind to look for classes in the kit as well as in the gallery. */
+@source "../src";
