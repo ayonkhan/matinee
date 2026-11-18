@@ -1,0 +1,43 @@
+/*
+  Matinee tokens (dark).
+  Load Bricolage Grotesque and Inter yourself, for example from Google Fonts.
+  The font files are not bundled here.
+*/
+@theme {
+  /* Surfaces */
+  --color-page: #131418;
+  --color-card: #1b1e26;
+  --color-raised: #222630;
+  --color-sunken: #171a20;
+  --color-line: #2d323d;
+  --color-line-strong: #3a4050;
+
+  /* Text */
+  --color-ink: #f3eee4;
+  --color-ink-soft: #d4d8e0;
+  --color-muted: #a0a6b2;
+
+  /* Accent: bright for filled shapes, text for links and stars */
+  --color-accent: #f0b44c;
+  --color-accent-ink: #1b1404;
+  --color-accent-text: #f0b44c;
+
+  /* Danger */
+  --color-danger: #dc2626;
+  --color-danger-text: #fca5a5;
+  --color-danger-line: rgb(248 113 113 / 0.4);
+
+  /* Fonts */
+  --font-display: "Bricolage Grotesque", sans-serif;
+  --font-sans: Inter, system-ui, sans-serif;
+  --font-mono: ui-monospace, Menlo, monospace;
+
+  /* Corners */
+  --radius-chip: 6px;
+  --radius-control: 8px;
+  --radius-tile: 12px;
+  --radius-card: 16px;
+
+  /* Shadows, only for things that float */
+  --shadow-float: 0 12px 32px rgb(0 0 0 / 0.55);
+}
