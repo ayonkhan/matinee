@@ -1,0 +1,20 @@
+{
+  "name": "matinee",
+  "version": "0.0.0",
+  "private": true,
+  "description": "A mobile-first design system with Tailwind v4 tokens and JSX components. Built with Hono.",
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run"
+  },
+  "peerDependencies": {
+    "hono": "^4"
+  },
+  "devDependencies": {
+    "hono": "^4",
+    "typescript": "^7.0.2",
+    "vitest": "^5.1.0"
+  }
+}
