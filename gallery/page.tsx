@@ -26,11 +26,11 @@ function Section(props: PropsWithChildren<{ title: string }>) {
   )
 }
 
-export function Page() {
+export function Page(props: { theme: 'dark' | 'light' }) {
   return (
     <>
       {raw('<!DOCTYPE html>')}
-      <html lang="en">
+      <html lang="en" data-theme={props.theme}>
         <head>
           <meta charset="utf-8" />
           <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -42,9 +42,25 @@ export function Page() {
         </head>
         <body class="min-h-screen bg-page font-sans text-ink">
           <main class="mx-auto flex max-w-4xl flex-col gap-12 px-4 py-12">
-            <header>
-              <h1 class="font-display text-4xl font-bold">Matinee</h1>
-              <p class="mt-2 text-muted">Tokens and components, all in one place.</p>
+            <header class="flex flex-wrap items-start justify-between gap-4">
+              <div>
+                <h1 class="font-display text-4xl font-bold">Matinee</h1>
+                <p class="mt-2 text-muted">Tokens and components, all in one place.</p>
+              </div>
+              <nav class="flex gap-1 rounded-control border border-line bg-sunken p-1 text-sm">
+                <a
+                  href="?theme=dark"
+                  class={`rounded-chip px-3 py-1.5 no-underline ${props.theme === 'dark' ? 'bg-raised font-semibold text-ink' : 'text-muted'}`}
+                >
+                  Dark
+                </a>
+                <a
+                  href="?theme=light"
+                  class={`rounded-chip px-3 py-1.5 no-underline ${props.theme === 'light' ? 'bg-raised font-semibold text-ink' : 'text-muted'}`}
+                >
+                  Light
+                </a>
+              </nav>
             </header>
 
             <Section title="Colours">

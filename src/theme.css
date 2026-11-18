@@ -1,5 +1,6 @@
 /*
-  Matinee tokens (dark).
+  Matinee tokens.
+  The dark values are the default. Add data-theme="light" to the html element for the light values.
   Load Bricolage Grotesque and Inter yourself, for example from Google Fonts.
   The font files are not bundled here.
 */
@@ -40,4 +41,29 @@
 
   /* Shadows, only for things that float */
   --shadow-float: 0 12px 32px rgb(0 0 0 / 0.55);
+}
+
+/* Light theme: same names, new values. Corners and fonts stay the same. */
+[data-theme="light"] {
+  --color-page: #f6f1e7;
+  --color-card: #ffffff;
+  --color-raised: #efe8da;
+  --color-sunken: #f3eee3;
+  --color-line: #e1d8c5;
+  --color-line-strong: #cfc5ae;
+
+  --color-ink: #1f1a12;
+  --color-ink-soft: #3a352b;
+  --color-muted: #6b655a;
+
+  /* The bright gold stays for filled shapes. Text needs a deeper gold to be readable. */
+  --color-accent: #f0b44c;
+  --color-accent-ink: #1b1404;
+  --color-accent-text: #c07a12;
+
+  --color-danger: #dc2626;
+  --color-danger-text: #b91c1c;
+  --color-danger-line: rgb(220 38 38 / 0.4);
+
+  --shadow-float: 0 12px 32px rgb(70 45 10 / 0.18);
 }
