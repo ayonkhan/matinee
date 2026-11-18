@@ -1,5 +1,6 @@
 import { raw } from 'hono/html'
 import type { PropsWithChildren } from 'hono/jsx'
+import { Button } from '../src'
 
 const fonts =
   'https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700&family=Inter:wght@400;500;600&display=swap'
@@ -71,6 +72,19 @@ export function Page(props: { theme: 'dark' | 'light' }) {
                     <div class="mt-2 text-sm">{colour.name}</div>
                   </div>
                 ))}
+              </div>
+            </Section>
+
+            <Section title="Button">
+              <div class="flex flex-wrap items-center gap-3">
+                <Button>Primary</Button>
+                <Button variant="secondary">Secondary</Button>
+                <Button variant="danger">Danger</Button>
+                <Button disabled>Disabled</Button>
+                <Button href="#">As a link</Button>
+              </div>
+              <div class="max-w-sm">
+                <Button fullWidth>Full width</Button>
               </div>
             </Section>
           </main>
