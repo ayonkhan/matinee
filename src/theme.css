@@ -67,3 +67,70 @@
 
   --shadow-float: 0 12px 32px rgb(70 45 10 / 0.18);
 }
+
+/*
+  Typography. Use one class per piece of text, for example class="type-heading".
+  Display and heading are smaller on a phone.
+*/
+@utility type-display {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.625rem;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+
+  @media (min-width: 40rem) {
+    font-size: 2.25rem;
+  }
+}
+
+@utility type-heading {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.125rem;
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+
+  @media (min-width: 40rem) {
+    font-size: 1.375rem;
+  }
+}
+
+@utility type-body {
+  font-family: var(--font-sans);
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+@utility type-label {
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: 0.875rem;
+  line-height: 1.4;
+}
+
+@utility type-hint {
+  font-family: var(--font-sans);
+  font-weight: 400;
+  font-size: 0.8125rem;
+  line-height: 1.5;
+  color: var(--color-muted);
+}
+
+@utility type-overline {
+  font-family: var(--font-sans);
+  font-weight: 400;
+  font-size: 0.75rem;
+  line-height: 1.4;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--color-muted);
+}
+
+@utility type-code {
+  font-family: var(--font-mono);
+  font-weight: 400;
+  font-size: 0.8125rem;
+  line-height: 1.65;
+}
