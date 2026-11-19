@@ -1,6 +1,6 @@
 import { raw } from 'hono/html'
 import type { PropsWithChildren } from 'hono/jsx'
-import { Button } from '../src'
+import { Button, Field } from '../src'
 
 const fonts =
   'https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700&family=Inter:wght@400;500;600&display=swap'
@@ -108,6 +108,37 @@ export function Page(props: { theme: 'dark' | 'light' }) {
               <div class="max-w-sm">
                 <Button fullWidth>Full width</Button>
               </div>
+            </Section>
+
+            <Section title="Field">
+              <div class="grid gap-6 sm:grid-cols-2">
+                <Field id="username" label="Username" placeholder="swift-raven-5065" hint="Shown on your public profile." />
+                <Field
+                  id="email"
+                  label="Email address"
+                  type="email"
+                  required
+                  value="name@example.com"
+                  hint="Used to sign in. Never shown on your profile."
+                />
+                <Field
+                  id="site"
+                  label="Website"
+                  type="url"
+                  value="example"
+                  error="Enter a full address, starting with https://"
+                />
+                <Field id="username-locked" label="Username, locked" readonly value="swift-raven-5065" />
+                <Field id="off" label="Disabled" disabled value="Not available" />
+              </div>
+              <Field
+                id="bio"
+                label="Bio"
+                multiline
+                rows={3}
+                value="Night owl. I watch too many films and rate them harshly."
+                hint="Shown on your profile. Up to 200 characters."
+              />
             </Section>
           </main>
         </body>
