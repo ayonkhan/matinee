@@ -1,6 +1,6 @@
 import { raw } from 'hono/html'
 import type { PropsWithChildren } from 'hono/jsx'
-import { Button, Field } from '../src'
+import { Button, Card, Field } from '../src'
 
 const fonts =
   'https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700&family=Inter:wght@400;500;600&display=swap'
@@ -139,6 +139,26 @@ export function Page(props: { theme: 'dark' | 'light' }) {
                 value="Night owl. I watch too many films and rate them harshly."
                 hint="Shown on your profile. Up to 200 characters."
               />
+            </Section>
+
+            <Section title="Card">
+              <div class="grid gap-6 sm:grid-cols-3">
+                <Card title="Default">
+                  <p class="type-body">The standard surface for a block of content.</p>
+                </Card>
+                <Card title="Floating" floating>
+                  <p class="type-body">A shadow lifts it above the page. Use it for menus and popovers.</p>
+                </Card>
+                <Card title="Large padding" padding="lg">
+                  <p class="type-body">More room for forms and settings sections.</p>
+                </Card>
+              </div>
+              <Card padding="none" class="max-w-sm overflow-hidden">
+                <div class="h-24 bg-raised" />
+                <div class="p-4">
+                  <p class="type-body">No padding, so an image or banner can reach the edges.</p>
+                </div>
+              </Card>
             </Section>
           </main>
         </body>
