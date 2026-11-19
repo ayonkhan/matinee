@@ -54,23 +54,23 @@ export function Page(props: { theme: 'dark' | 'light' }) {
         </head>
         <body class="min-h-screen bg-page font-sans text-ink">
           <main class="mx-auto flex max-w-4xl flex-col gap-12 px-4 py-12">
-            <header class="flex flex-wrap items-start justify-between gap-4">
+            <header class="flex items-start justify-between gap-4">
               <div>
                 <h1 class="font-display text-4xl font-bold">Matinee</h1>
                 <p class="mt-2 text-muted">Tokens and components, all in one place.</p>
               </div>
-              <nav class="flex gap-1 rounded-control border border-line bg-sunken p-1 text-sm">
-                <a
-                  href="?theme=dark"
-                  class={`rounded-chip px-3 py-1.5 no-underline ${props.theme === 'dark' ? 'bg-raised font-semibold text-ink' : 'text-muted'}`}
-                >
-                  Dark
-                </a>
+              <nav class="flex shrink-0 gap-1 rounded-control border border-line bg-sunken p-1 text-sm">
                 <a
                   href="?theme=light"
                   class={`rounded-chip px-3 py-1.5 no-underline ${props.theme === 'light' ? 'bg-raised font-semibold text-ink' : 'text-muted'}`}
                 >
                   Light
+                </a>
+                <a
+                  href="?theme=dark"
+                  class={`rounded-chip px-3 py-1.5 no-underline ${props.theme === 'dark' ? 'bg-raised font-semibold text-ink' : 'text-muted'}`}
+                >
+                  Dark
                 </a>
               </nav>
             </header>

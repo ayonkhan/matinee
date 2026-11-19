@@ -1,32 +1,32 @@
 /*
   Matinee tokens.
-  The dark values are the default. Add data-theme="light" to the html element for the light values.
+  The light values are the default. Add data-theme="dark" to the html element for the dark values.
   Load Bricolage Grotesque and Inter yourself, for example from Google Fonts.
   The font files are not bundled here.
 */
 @theme {
   /* Surfaces */
-  --color-page: #131418;
-  --color-card: #1b1e26;
-  --color-raised: #222630;
-  --color-sunken: #171a20;
-  --color-line: #2d323d;
-  --color-line-strong: #3a4050;
+  --color-page: #f6f1e7;
+  --color-card: #ffffff;
+  --color-raised: #efe8da;
+  --color-sunken: #f3eee3;
+  --color-line: #e1d8c5;
+  --color-line-strong: #cfc5ae;
 
   /* Text */
-  --color-ink: #f3eee4;
-  --color-ink-soft: #d4d8e0;
-  --color-muted: #a0a6b2;
+  --color-ink: #1f1a12;
+  --color-ink-soft: #3a352b;
+  --color-muted: #6b655a;
 
-  /* Accent: bright for filled shapes, text for links and stars */
+  /* Accent: bright for filled shapes, deeper for text so it stays readable */
   --color-accent: #f0b44c;
   --color-accent-ink: #1b1404;
-  --color-accent-text: #f0b44c;
+  --color-accent-text: #c07a12;
 
   /* Danger */
   --color-danger: #dc2626;
-  --color-danger-text: #fca5a5;
-  --color-danger-line: rgb(248 113 113 / 0.4);
+  --color-danger-text: #b91c1c;
+  --color-danger-line: rgb(220 38 38 / 0.4);
 
   /* Fonts */
   --font-display: "Bricolage Grotesque", sans-serif;
@@ -40,32 +40,32 @@
   --radius-card: 16px;
 
   /* Shadows, only for things that float */
-  --shadow-float: 0 12px 32px rgb(0 0 0 / 0.55);
+  --shadow-float: 0 12px 32px rgb(70 45 10 / 0.18);
 }
 
-/* Light theme: same names, new values. Corners and fonts stay the same. */
-[data-theme="light"] {
-  --color-page: #f6f1e7;
-  --color-card: #ffffff;
-  --color-raised: #efe8da;
-  --color-sunken: #f3eee3;
-  --color-line: #e1d8c5;
-  --color-line-strong: #cfc5ae;
+/* Dark theme: same names, new values. Corners and fonts stay the same. */
+[data-theme="dark"] {
+  --color-page: #131418;
+  --color-card: #1b1e26;
+  --color-raised: #222630;
+  --color-sunken: #171a20;
+  --color-line: #2d323d;
+  --color-line-strong: #3a4050;
 
-  --color-ink: #1f1a12;
-  --color-ink-soft: #3a352b;
-  --color-muted: #6b655a;
+  --color-ink: #f3eee4;
+  --color-ink-soft: #d4d8e0;
+  --color-muted: #a0a6b2;
 
-  /* The bright gold stays for filled shapes. Text needs a deeper gold to be readable. */
+  /* On dark, the bright gold is readable as text too. */
   --color-accent: #f0b44c;
   --color-accent-ink: #1b1404;
-  --color-accent-text: #c07a12;
+  --color-accent-text: #f0b44c;
 
   --color-danger: #dc2626;
-  --color-danger-text: #b91c1c;
-  --color-danger-line: rgb(220 38 38 / 0.4);
+  --color-danger-text: #fca5a5;
+  --color-danger-line: rgb(248 113 113 / 0.4);
 
-  --shadow-float: 0 12px 32px rgb(70 45 10 / 0.18);
+  --shadow-float: 0 12px 32px rgb(0 0 0 / 0.55);
 }
 
 /*
