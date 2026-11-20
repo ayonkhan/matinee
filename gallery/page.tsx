@@ -1,6 +1,6 @@
 import { raw } from 'hono/html'
 import type { PropsWithChildren } from 'hono/jsx'
-import { Badge, Button, Card, Field, Notice, Poster, Stars } from '../src'
+import { Badge, Button, Card, Field, Notice, Poster, Stars, TopBar } from '../src'
 
 const fonts =
   'https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700&family=Inter:wght@400;500;600&display=swap'
@@ -38,6 +38,22 @@ function sampleArt(from: string, to: string) {
 const artGold = sampleArt('#f0b44c', '#7a3d0c')
 const artBlue = sampleArt('#4c8ff0', '#1b1e4a')
 const artRose = sampleArt('#f06c8a', '#3a1230')
+
+const barLinks = [
+  { label: 'Home', href: '#', current: true },
+  { label: 'Browse', href: '#' },
+  { label: 'Saved', href: '#' },
+  { label: 'People', href: '#' },
+]
+
+const barUser = {
+  name: 'swift-raven-5065',
+  menu: [
+    { label: 'Your profile', href: '#' },
+    { label: 'Settings', href: '#' },
+    { label: 'Sign out', href: '#', post: true },
+  ],
+}
 
 function Section(props: PropsWithChildren<{ title: string }>) {
   return (
@@ -232,6 +248,26 @@ export function Page(props: { theme: 'dark' | 'light' }) {
                 <Notice tone="danger" title="Could not save">
                   Check the highlighted fields and try again.
                 </Notice>
+              </div>
+            </Section>
+
+            <Section title="TopBar">
+              <div class="overflow-hidden rounded-card border border-line">
+                <TopBar
+                  brand={{ name: 'Matinee', href: '#' }}
+                  links={barLinks}
+                  action={{ label: 'New', href: '#' }}
+                  user={barUser}
+                />
+              </div>
+              <p class="type-hint">The account menu opens from the avatar. It is open below.</p>
+              <div class="h-72 overflow-hidden rounded-card border border-line">
+                <TopBar
+                  brand={{ name: 'Matinee', href: '#' }}
+                  links={barLinks}
+                  action={{ label: 'New', href: '#' }}
+                  user={{ ...barUser, open: true }}
+                />
               </div>
             </Section>
           </main>
