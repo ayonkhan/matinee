@@ -1,6 +1,6 @@
 import { raw } from 'hono/html'
 import type { PropsWithChildren } from 'hono/jsx'
-import { Button, Card, Field, Poster } from '../src'
+import { Button, Card, Field, Poster, Stars } from '../src'
 
 const fonts =
   'https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700&family=Inter:wght@400;500;600&display=swap'
@@ -183,6 +183,24 @@ export function Page(props: { theme: 'dark' | 'light' }) {
                 <Poster title="Two" src={artBlue} size="fill" />
                 <Poster title="Three" size="fill" />
                 <Poster title="Four" src={artRose} size="fill" />
+              </div>
+            </Section>
+
+            <Section title="Stars">
+              <div class="flex flex-wrap items-center gap-x-8 gap-y-4">
+                <Stars value={0} showValue />
+                <Stars value={2.5} showValue />
+                <Stars value={3.5} showValue />
+                <Stars value={5} showValue />
+              </div>
+              <div class="flex flex-wrap items-center gap-x-8 gap-y-4">
+                <Stars value={4} size="sm" />
+                <Stars value={4} size="md" />
+                <Stars value={4} size="lg" />
+              </div>
+              <div class="flex flex-col gap-1">
+                <Stars value={3.5} label="Rated 7 out of 10" />
+                <p class="type-hint">A 7 out of 10 rating, shown as 3.5 of 5 stars.</p>
               </div>
             </Section>
           </main>
