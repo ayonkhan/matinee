@@ -1,6 +1,6 @@
 import { raw } from 'hono/html'
 import type { PropsWithChildren } from 'hono/jsx'
-import { Button, Card, Field } from '../src'
+import { Button, Card, Field, Poster } from '../src'
 
 const fonts =
   'https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700&family=Inter:wght@400;500;600&display=swap'
@@ -28,6 +28,16 @@ const typeStyles = [
   { name: 'type-overline', cls: 'type-overline', sample: 'Live preview' },
   { name: 'type-code', cls: 'type-code', sample: '<Button variant="primary">Save</Button>' },
 ]
+
+// Sample artwork drawn here, so the public gallery never shows a real studio poster.
+function sampleArt(from: string, to: string) {
+  const svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 300"><defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="${from}"/><stop offset="1" stop-color="${to}"/></linearGradient></defs><rect width="200" height="300" fill="url(#g)"/></svg>`
+  return `data:image/svg+xml;utf8,${encodeURIComponent(svg)}`
+}
+
+const artGold = sampleArt('#f0b44c', '#7a3d0c')
+const artBlue = sampleArt('#4c8ff0', '#1b1e4a')
+const artRose = sampleArt('#f06c8a', '#3a1230')
 
 function Section(props: PropsWithChildren<{ title: string }>) {
   return (
@@ -159,6 +169,21 @@ export function Page(props: { theme: 'dark' | 'light' }) {
                   <p class="type-body">No padding, so an image or banner can reach the edges.</p>
                 </div>
               </Card>
+            </Section>
+
+            <Section title="Poster">
+              <div class="flex flex-wrap items-end gap-6">
+                <Poster title="Small" src={artGold} size="sm" />
+                <Poster title="Medium" src={artBlue} size="md" />
+                <Poster title="Large" src={artRose} size="lg" />
+                <Poster title="A film with no poster found" size="lg" />
+              </div>
+              <div class="grid max-w-md grid-cols-4 gap-3">
+                <Poster title="One" src={artGold} size="fill" />
+                <Poster title="Two" src={artBlue} size="fill" />
+                <Poster title="Three" size="fill" />
+                <Poster title="Four" src={artRose} size="fill" />
+              </div>
             </Section>
           </main>
         </body>
