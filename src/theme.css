@@ -34,7 +34,7 @@
   --font-mono: ui-monospace, Menlo, monospace;
 
   /* Corners */
-  --radius-chip: 6px;
+  --radius-badge: 6px;
   --radius-control: 8px;
   --radius-tile: 12px;
   --radius-card: 16px;

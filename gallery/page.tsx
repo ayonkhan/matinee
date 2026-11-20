@@ -1,6 +1,6 @@
 import { raw } from 'hono/html'
 import type { PropsWithChildren } from 'hono/jsx'
-import { Button, Card, Field, Poster, Stars } from '../src'
+import { Badge, Button, Card, Field, Notice, Poster, Stars } from '../src'
 
 const fonts =
   'https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700&family=Inter:wght@400;500;600&display=swap'
@@ -72,13 +72,13 @@ export function Page(props: { theme: 'dark' | 'light' }) {
               <nav class="flex shrink-0 gap-1 rounded-control border border-line bg-sunken p-1 text-sm">
                 <a
                   href="?theme=light"
-                  class={`rounded-chip px-3 py-1.5 no-underline ${props.theme === 'light' ? 'bg-raised font-semibold text-ink' : 'text-muted'}`}
+                  class={`rounded-badge px-3 py-1.5 no-underline ${props.theme === 'light' ? 'bg-raised font-semibold text-ink' : 'text-muted'}`}
                 >
                   Light
                 </a>
                 <a
                   href="?theme=dark"
-                  class={`rounded-chip px-3 py-1.5 no-underline ${props.theme === 'dark' ? 'bg-raised font-semibold text-ink' : 'text-muted'}`}
+                  class={`rounded-badge px-3 py-1.5 no-underline ${props.theme === 'dark' ? 'bg-raised font-semibold text-ink' : 'text-muted'}`}
                 >
                   Dark
                 </a>
@@ -201,6 +201,37 @@ export function Page(props: { theme: 'dark' | 'light' }) {
               <div class="flex flex-col gap-1">
                 <Stars value={3.5} label="Rated 7 out of 10" />
                 <p class="type-hint">A 7 out of 10 rating, shown as 3.5 of 5 stars.</p>
+              </div>
+            </Section>
+
+            <Section title="Badge">
+              <div class="flex flex-wrap items-center gap-2">
+                <Badge>Drama</Badge>
+                <Badge>1999</Badge>
+                <Badge tone="accent">Movie</Badge>
+                <Badge tone="accent">TV</Badge>
+                <Badge tone="danger">Removed</Badge>
+              </div>
+              <div class="flex flex-col gap-2">
+                <div class="flex flex-wrap items-center gap-2">
+                  <Badge href="#" selected>All</Badge>
+                  <Badge href="#">Movies</Badge>
+                  <Badge href="#">TV</Badge>
+                  <Badge href="#">Watchlist</Badge>
+                </div>
+                <p class="type-hint">Badges that link can act as filters. The selected one is solid.</p>
+              </div>
+            </Section>
+
+            <Section title="Notice">
+              <div class="flex max-w-xl flex-col gap-3">
+                <Notice>Your film list is private until you share it.</Notice>
+                <Notice tone="accent" title="Saved">
+                  Your changes are live.
+                </Notice>
+                <Notice tone="danger" title="Could not save">
+                  Check the highlighted fields and try again.
+                </Notice>
               </div>
             </Section>
           </main>
