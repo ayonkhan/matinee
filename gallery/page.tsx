@@ -1,4 +1,5 @@
 import { raw } from 'hono/html'
+import { SegmentedControl } from '../src'
 import { Section } from './section'
 import { groups } from './sections'
 
@@ -17,20 +18,15 @@ function Brand() {
 }
 
 function ThemeSwitch(props: { theme: Theme }) {
-  const link = (theme: Theme, label: string) => (
-    <a
-      href={`?theme=${theme}`}
-      class={`rounded-badge px-3 py-1.5 no-underline ${props.theme === theme ? 'bg-raised font-semibold text-ink' : 'text-muted'}`}
-    >
-      {label}
-    </a>
-  )
-
   return (
-    <nav aria-label="Theme" class="flex w-fit shrink-0 gap-1 rounded-control border border-line bg-sunken p-1 text-sm">
-      {link('light', 'Light')}
-      {link('dark', 'Dark')}
-    </nav>
+    <SegmentedControl
+      label="Theme"
+      class="w-fit shrink-0"
+      options={[
+        { label: 'Light', href: '?theme=light', selected: props.theme === 'light' },
+        { label: 'Dark', href: '?theme=dark', selected: props.theme === 'dark' },
+      ]}
+    />
   )
 }
 

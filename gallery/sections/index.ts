@@ -8,6 +8,7 @@ import { ColoursSection } from './colours'
 import { FieldSection } from './field'
 import { NoticeSection } from './notice'
 import { PosterSection } from './poster'
+import { SegmentedControlSection } from './segmented-control'
 import { StarsSection } from './stars'
 import { TopBarSection } from './top-bar'
 import { TypographySection } from './typography'
@@ -43,6 +44,7 @@ export const groups: SectionGroup[] = [
       { id: 'field', title: 'Field', Component: FieldSection },
       { id: 'notice', title: 'Notice', Component: NoticeSection },
       { id: 'poster', title: 'Poster', Component: PosterSection },
+      { id: 'segmented-control', title: 'SegmentedControl', Component: SegmentedControlSection },
       { id: 'stars', title: 'Stars', Component: StarsSection },
       { id: 'top-bar', title: 'TopBar', Component: TopBarSection },
     ],
