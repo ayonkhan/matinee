@@ -73,4 +73,19 @@ describe('Field', () => {
 
     expect(html).not.toContain('<script>')
   })
+
+  it('accepts date and time types', () => {
+    expect(render(<Field id="a" label="A" type="date" />)).toContain('type="date"')
+    expect(render(<Field id="a" label="A" type="time" />)).toContain('type="time"')
+    expect(render(<Field id="a" label="A" type="datetime-local" />)).toContain('type="datetime-local"')
+    expect(render(<Field id="a" label="A" type="month" />)).toContain('type="month"')
+  })
+
+  it('passes min, max and step to the input', () => {
+    const html = render(<Field id="a" label="A" type="number" min={1} max={10} step={0.5} />)
+
+    expect(html).toContain('min="1"')
+    expect(html).toContain('max="10"')
+    expect(html).toContain('step="0.5"')
+  })
 })

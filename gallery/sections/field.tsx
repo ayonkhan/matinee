@@ -22,6 +22,10 @@ export function FieldSection() {
         />
         <Field id="username-locked" label="Username, locked" readonly value="swift-raven-5065" />
         <Field id="off" label="Disabled" disabled value="Not available" />
+        <Field id="date" label="Date" type="date" value="2026-11-21" />
+        <Field id="time" label="Time" type="time" value="19:30" />
+        <Field id="when" label="Date and time" type="datetime-local" value="2026-11-21T19:30" />
+        <Field id="month" label="Month" type="month" value="2026-11" />
       </div>
       <Field
         id="bio"

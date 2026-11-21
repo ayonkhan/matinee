@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { controlClasses, describedBy, FieldMessage } from '../src/components/form-parts'
+import { controlClasses, defaultSize, describedBy, FieldMessage } from '../src/components/form-parts'
 
 const render = (node: unknown) => String(node)
 
@@ -75,5 +75,18 @@ describe('controlClasses', () => {
 
     expect(classes).not.toContain('bg-sunken')
     expect(classes).not.toContain('cursor-not-allowed')
+  })
+
+  it('uses the default size unless told otherwise', () => {
+    expect(controlClasses({})).toContain(defaultSize)
+  })
+
+  it('can swap the size', () => {
+    const classes = controlClasses({}, 'p-2 font-mono text-2xl')
+
+    expect(classes).toContain('font-mono')
+    expect(classes).toContain('text-2xl')
+    expect(classes).not.toContain('font-sans')
+    expect(classes).not.toContain('py-3')
   })
 })

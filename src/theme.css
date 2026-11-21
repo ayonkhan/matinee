@@ -45,6 +45,9 @@
 
 /* Dark theme: same names, new values. Corners and fonts stay the same. */
 [data-theme="dark"] {
+  /* Native parts such as the date picker and scrollbars follow the theme. */
+  color-scheme: dark;
+
   --color-page: #131418;
   --color-card: #1b1e26;
   --color-raised: #222630;

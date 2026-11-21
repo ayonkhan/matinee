@@ -6,10 +6,13 @@ export type FieldProps = {
   name?: string
   hint?: string
   error?: string
-  type?: 'text' | 'email' | 'url' | 'password' | 'search' | 'tel' | 'number'
+  type?: 'text' | 'email' | 'url' | 'password' | 'search' | 'tel' | 'number' | 'date' | 'time' | 'datetime-local' | 'month'
   value?: string | number
   placeholder?: string
   maxlength?: number
+  min?: string | number
+  max?: string | number
+  step?: string | number
   required?: boolean
   readonly?: boolean
   disabled?: boolean
@@ -60,6 +63,9 @@ export function Field(props: FieldProps) {
           value={value}
           placeholder={props.placeholder}
           maxlength={props.maxlength}
+          min={props.min}
+          max={props.max}
+          step={props.step}
           required={props.required}
           readonly={props.readonly}
           disabled={props.disabled}
