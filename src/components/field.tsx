@@ -6,7 +6,18 @@ export type FieldProps = {
   name?: string
   hint?: string
   error?: string
-  type?: 'text' | 'email' | 'url' | 'password' | 'search' | 'tel' | 'number' | 'date' | 'time' | 'datetime-local' | 'month'
+  type?:
+    | 'text'
+    | 'email'
+    | 'url'
+    | 'password'
+    | 'search'
+    | 'tel'
+    | 'number'
+    | 'date'
+    | 'time'
+    | 'datetime-local'
+    | 'month'
   value?: string | number
   placeholder?: string
   maxlength?: number

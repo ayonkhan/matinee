@@ -31,6 +31,7 @@ describe('FieldMessage', () => {
 
     expect(html).toContain('id="email-error"')
     expect(html).toContain('text-danger-text')
+    expect(html).toContain('font-sans')
     expect(html).toContain('Enter an email.')
     expect(html).not.toContain('Used to sign in.')
   })

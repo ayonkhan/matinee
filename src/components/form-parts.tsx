@@ -34,7 +34,7 @@ export function describedBy(id: string, hint?: string, error?: string) {
 export function FieldMessage(props: { id: string; hint?: string; error?: string }) {
   if (props.error) {
     return (
-      <p id={`${props.id}-error`} class="text-sm text-danger-text">
+      <p id={`${props.id}-error`} class="font-sans text-sm text-danger-text">
         {props.error}
       </p>
     )

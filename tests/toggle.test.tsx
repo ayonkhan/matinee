@@ -59,6 +59,10 @@ describe('Toggle', () => {
     expect(render(<Toggle id="a" label="A" class="mt-2" />)).toContain('mt-2')
   })
 
+  it('leaves out an empty class attribute', () => {
+    expect(render(<Toggle id="a" label="A" />)).not.toContain('class=""')
+  })
+
   it('escapes the label', () => {
     expect(render(<Toggle id="a" label={'<script>alert(1)</script>'} />)).not.toContain('<script>')
   })

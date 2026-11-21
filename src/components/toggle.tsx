@@ -17,7 +17,7 @@ export function Toggle(props: ToggleProps) {
   const { id, label, hint, disabled } = props
 
   return (
-    <div class={props.class ?? ''}>
+    <div class={props.class}>
       <label for={id} class={`flex min-h-11 items-center justify-between gap-4 py-2 ${disabled ? 'cursor-not-allowed' : 'cursor-pointer'}`}>
         <input
           type="checkbox"
