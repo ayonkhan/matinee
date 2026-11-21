@@ -3,3 +3,8 @@
 
 /* Tell Tailwind to look for classes in the kit as well as in the gallery. */
 @source "../src";
+
+/* Sidebar links glide to their section. */
+html {
+  scroll-behavior: smooth;
+}
