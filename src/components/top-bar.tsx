@@ -1,3 +1,4 @@
+import { Avatar } from './avatar'
 import { Button } from './button'
 
 export type TopBarLink = {
@@ -26,33 +27,9 @@ export type TopBarProps = {
   class?: string
 }
 
-// "swift-raven-5065" becomes "SR".
-function initials(name: string) {
-  const letters = name
-    .split(/[\s\-_]+/)
-    .filter(Boolean)
-    .slice(0, 2)
-    .map((part) => part.charAt(0).toUpperCase())
-    .join('')
-
-  return letters || '?'
-}
-
 const focus = 'focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent-text'
 
 const menuItem = `block w-full cursor-pointer rounded-control px-3 py-2 text-left font-sans text-sm text-ink no-underline hover:bg-raised ${focus}`
-
-function Avatar(props: { name: string; src?: string }) {
-  if (props.src) {
-    return <img src={props.src} alt="" width="36" height="36" class="size-9 rounded-full object-cover" />
-  }
-
-  return (
-    <span class="flex size-9 items-center justify-center rounded-full bg-accent text-sm font-semibold text-accent-ink">
-      {initials(props.name)}
-    </span>
-  )
-}
 
 export function TopBar(props: TopBarProps) {
   const { brand, links = [], action, user } = props
@@ -93,7 +70,7 @@ export function TopBar(props: TopBarProps) {
                 aria-label="Account menu"
                 class={`flex cursor-pointer list-none items-center rounded-full [&::-webkit-details-marker]:hidden ${focus}`}
               >
-                <Avatar name={user.name} src={user.avatarSrc} />
+                <Avatar name={user.name} src={user.avatarSrc} decorative />
               </summary>
 
               <div class="absolute right-0 z-10 mt-2 w-56 rounded-card border border-line bg-card p-1 shadow-float">

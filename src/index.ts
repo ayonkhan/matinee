@@ -1,5 +1,7 @@
 export { ActionBar } from './components/action-bar'
 export type { ActionBarProps } from './components/action-bar'
+export { Avatar } from './components/avatar'
+export type { AvatarProps, AvatarSize } from './components/avatar'
 export { Badge } from './components/badge'
 export type { BadgeProps, BadgeTone } from './components/badge'
 export { BottomNav } from './components/bottom-nav'

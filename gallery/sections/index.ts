@@ -1,5 +1,6 @@
 import type { FC } from 'hono/jsx'
 import { ActionBarSection } from './action-bar'
+import { AvatarSection } from './avatar'
 import { BadgeSection } from './badge'
 import { BottomNavSection } from './bottom-nav'
 import { ButtonSection } from './button'
@@ -45,6 +46,7 @@ export const groups: SectionGroup[] = [
     title: 'Components',
     sections: [
       { id: 'action-bar', title: 'ActionBar', Component: ActionBarSection },
+      { id: 'avatar', title: 'Avatar', Component: AvatarSection },
       { id: 'badge', title: 'Badge', Component: BadgeSection },
       { id: 'bottom-nav', title: 'BottomNav', Component: BottomNavSection },
       { id: 'button', title: 'Button', Component: ButtonSection },
