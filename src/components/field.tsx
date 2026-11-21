@@ -1,3 +1,5 @@
+import { controlClasses, describedBy, FieldMessage } from './form-parts'
+
 export type FieldProps = {
   id: string
   label: string
@@ -16,26 +18,11 @@ export type FieldProps = {
   class?: string
 }
 
-const control =
-  'block w-full rounded-control border bg-raised px-4 py-3 font-sans text-base text-ink placeholder:text-muted focus:border-accent-text focus:outline-none focus:ring-2 focus:ring-accent-text/30'
-
 export function Field(props: FieldProps) {
   const { id, label, hint, error, type = 'text', value, multiline, rows = 3 } = props
 
-  const hintId = `${id}-hint`
-  const errorId = `${id}-error`
-
-  // The control points at the message under it, so screen readers read both together.
-  const describedBy = error ? errorId : hint ? hintId : undefined
-
-  const controlClasses = [
-    control,
-    error ? 'border-danger-line' : 'border-line',
-    props.readonly ? 'bg-sunken text-muted' : '',
-    props.disabled ? 'cursor-not-allowed opacity-60' : '',
-  ]
-    .filter(Boolean)
-    .join(' ')
+  const aria = describedBy(id, hint, error)
+  const classes = controlClasses({ error: Boolean(error), readonly: props.readonly, disabled: props.disabled })
 
   return (
     <div class={['flex flex-col gap-2', props.class ?? ''].filter(Boolean).join(' ')}>
@@ -60,8 +47,8 @@ export function Field(props: FieldProps) {
           readonly={props.readonly}
           disabled={props.disabled}
           aria-invalid={error ? 'true' : undefined}
-          aria-describedby={describedBy}
-          class={controlClasses}
+          aria-describedby={aria}
+          class={classes}
         >
           {value}
         </textarea>
@@ -77,20 +64,12 @@ export function Field(props: FieldProps) {
           readonly={props.readonly}
           disabled={props.disabled}
           aria-invalid={error ? 'true' : undefined}
-          aria-describedby={describedBy}
-          class={controlClasses}
+          aria-describedby={aria}
+          class={classes}
         />
       )}
 
-      {error ? (
-        <p id={errorId} class="text-sm text-danger-text">
-          {error}
-        </p>
-      ) : hint ? (
-        <p id={hintId} class="type-hint">
-          {hint}
-        </p>
-      ) : null}
+      <FieldMessage id={id} hint={hint} error={error} />
     </div>
   )
 }
