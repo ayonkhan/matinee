@@ -18,6 +18,7 @@ import { SegmentedControlSection } from './segmented-control'
 import { SelectSection } from './select'
 import { SliderSection } from './slider'
 import { StarsSection } from './stars'
+import { StatSection } from './stat'
 import { ToggleSection } from './toggle'
 import { TopBarSection } from './top-bar'
 import { TypographySection } from './typography'
@@ -63,6 +64,7 @@ export const groups: SectionGroup[] = [
       { id: 'select', title: 'Select', Component: SelectSection },
       { id: 'slider', title: 'Slider', Component: SliderSection },
       { id: 'stars', title: 'Stars', Component: StarsSection },
+      { id: 'stat', title: 'Stat', Component: StatSection },
       { id: 'toggle', title: 'Toggle', Component: ToggleSection },
       { id: 'top-bar', title: 'TopBar', Component: TopBarSection },
     ],
