@@ -12,7 +12,9 @@ function Brand() {
   return (
     <div>
       <h1 class="font-display text-3xl font-bold">Matinee</h1>
-      <p class="mt-1 text-sm text-muted">Tokens and components, all in one place.</p>
+      <p class="mt-1 text-sm text-muted">
+        A mobile-first design system with Tailwind v4 tokens and JSX components. Built with Hono.
+      </p>
     </div>
   )
 }
@@ -50,6 +52,28 @@ function SectionLinks() {
   )
 }
 
+function SiteFooter(props: { class?: string }) {
+  const link = 'underline hover:text-ink'
+
+  return (
+    <footer class={`flex flex-col gap-2 text-xs text-muted ${props.class ?? ''}`}>
+      <p>
+        © 2026 Ayon Khan.{' '}
+        <a href="https://github.com/ayonkhan/matinee/blob/main/LICENSE" class={link}>
+          MIT License
+        </a>
+        .
+      </p>
+      <p>
+        <a href="https://github.com/ayonkhan/matinee" class={link}>
+          View on GitHub
+        </a>
+      </p>
+      <p>Fonts: Bricolage Grotesque and Inter, SIL Open Font License.</p>
+    </footer>
+  )
+}
+
 export function Page(props: { theme: Theme }) {
   return (
     <>
@@ -70,6 +94,7 @@ export function Page(props: { theme: Theme }) {
               <Brand />
               <ThemeSwitch theme={props.theme} />
               <SectionLinks />
+              <SiteFooter class="mt-auto border-t border-line pt-4" />
             </aside>
 
             <div class="min-w-0 flex-1">
@@ -98,6 +123,8 @@ export function Page(props: { theme: Theme }) {
                   )),
                 )}
               </main>
+
+              <SiteFooter class="border-t border-line px-4 py-6 lg:hidden" />
             </div>
           </div>
         </body>
