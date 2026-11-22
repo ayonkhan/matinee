@@ -1,4 +1,5 @@
 import { EmptyState } from '../../src'
+import { CodeBlock } from '../code-block'
 
 const filmIcon = (
   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="size-6">
@@ -17,6 +18,12 @@ export function EmptyStateSection() {
         <EmptyState title="No results">Try a different search.</EmptyState>
         <EmptyState title="Nothing here yet" />
       </div>
+      <CodeBlock
+        title="Basic use"
+        code={`<EmptyState title="Your watchlist is empty" action={{ label: 'Add a film', href: '/films/new' }}>
+  Films you want to see will show up here.
+</EmptyState>`}
+      />
     </>
   )
 }

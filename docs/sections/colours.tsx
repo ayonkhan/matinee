@@ -1,3 +1,5 @@
+import { CodeBlock } from '../code-block'
+
 // Full class names are written out so Tailwind can find them.
 const colours = [
   { name: 'page', swatch: 'bg-page' },
@@ -16,13 +18,21 @@ const colours = [
 
 export function ColoursSection() {
   return (
-    <div class="grid grid-cols-3 gap-4 sm:grid-cols-6">
-      {colours.map((colour) => (
-        <div>
-          <div class={`h-16 rounded-tile border border-line ${colour.swatch}`} />
-          <div class="mt-2 text-sm">{colour.name}</div>
-        </div>
-      ))}
-    </div>
+    <>
+      <div class="grid grid-cols-3 gap-4 sm:grid-cols-6">
+        {colours.map((colour) => (
+          <div>
+            <div class={`h-16 rounded-tile border border-line ${colour.swatch}`} />
+            <div class="mt-2 text-sm">{colour.name}</div>
+          </div>
+        ))}
+      </div>
+      <CodeBlock
+        title="Use the tokens as Tailwind classes"
+        code={`<div class="border border-line bg-card text-ink">
+  <p class="text-muted">Secondary text</p>
+</div>`}
+      />
+    </>
   )
 }

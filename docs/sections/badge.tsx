@@ -1,4 +1,5 @@
 import { Badge } from '../../src'
+import { CodeBlock } from '../code-block'
 
 export function BadgeSection() {
   return (
@@ -19,6 +20,14 @@ export function BadgeSection() {
         </div>
         <p class="type-hint">Badges that link can act as filters. The selected one is solid.</p>
       </div>
+      <CodeBlock
+        title="Basic use"
+        code={`<Badge tone="accent">Movie</Badge>`}
+      />
+      <CodeBlock
+        title="As a filter"
+        code={`<Badge href="/films?type=movie" selected>Movies</Badge>`}
+      />
     </>
   )
 }

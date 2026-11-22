@@ -1,4 +1,5 @@
 import { Field, Fieldset } from '../../src'
+import { CodeBlock } from '../code-block'
 
 export function FieldsetSection() {
   return (
@@ -15,6 +16,13 @@ export function FieldsetSection() {
           <Field id="contact-phone" label="Phone" type="tel" />
         </div>
       </Fieldset>
+      <CodeBlock
+        title="Basic use"
+        code={`<Fieldset id="name" legend="Your name" hint="Shown on your public profile.">
+  <Field id="first" label="First name" />
+  <Field id="last" label="Last name" />
+</Fieldset>`}
+      />
     </>
   )
 }

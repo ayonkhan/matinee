@@ -1,5 +1,6 @@
 import type { PropsWithChildren } from 'hono/jsx'
 import { BottomNav } from '../../src'
+import { CodeBlock } from '../code-block'
 
 function Icon(props: PropsWithChildren) {
   return (
@@ -70,6 +71,16 @@ export function BottomNavSection() {
       <p class="type-hint">
         On a phone it floats at the bottom of the screen. From wider screens up it is hidden, and the top bar takes over. Leave room at the bottom of the page so content is not hidden behind it.
       </p>
+      <CodeBlock
+        title="Basic use"
+        code={`<BottomNav
+  items={[
+    { label: 'Home', href: '/', current: true },
+    { label: 'Browse', href: '/browse' },
+    { label: 'New', href: '/new', primary: true },
+  ]}
+/>`}
+      />
     </>
   )
 }

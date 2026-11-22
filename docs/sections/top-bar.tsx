@@ -1,4 +1,5 @@
 import { TopBar } from '../../src'
+import { CodeBlock } from '../code-block'
 
 const barLinks = [
   { label: 'Home', href: '#', current: true },
@@ -36,6 +37,15 @@ export function TopBarSection() {
           user={{ ...barUser, open: true }}
         />
       </div>
+      <CodeBlock
+        title="Basic use"
+        code={`<TopBar
+  brand={{ name: 'Matinee', href: '/' }}
+  links={[{ label: 'Home', href: '/', current: true }]}
+  action={{ label: 'New', href: '/new' }}
+  user={{ name: 'swift-raven-5065', menu: [{ label: 'Settings', href: '/settings' }] }}
+/>`}
+      />
     </>
   )
 }

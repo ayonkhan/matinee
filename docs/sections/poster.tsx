@@ -1,4 +1,5 @@
 import { Poster } from '../../src'
+import { CodeBlock } from '../code-block'
 
 // Sample artwork drawn here, so the public docs never shows a real studio poster.
 function sampleArt(from: string, to: string) {
@@ -25,6 +26,14 @@ export function PosterSection() {
         <Poster title="Three" size="fill" />
         <Poster title="Four" src={artRose} size="fill" />
       </div>
+      <CodeBlock
+        title="Basic use"
+        code={`<Poster title="Night Train" src="https://example.com/night-train.jpg" size="lg" />`}
+      />
+      <CodeBlock
+        title="No poster, filling a grid cell"
+        code={`<Poster title="Night Train" size="fill" />`}
+      />
     </>
   )
 }

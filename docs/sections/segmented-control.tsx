@@ -1,5 +1,6 @@
 import type { PropsWithChildren } from 'hono/jsx'
 import { SegmentedControl } from '../../src'
+import { CodeBlock } from '../code-block'
 
 function Icon(props: PropsWithChildren) {
   return (
@@ -62,6 +63,16 @@ export function SegmentedControlSection() {
         />
         <p class="type-hint">Each option is a link, so it works without JavaScript.</p>
       </div>
+      <CodeBlock
+        title="Basic use"
+        code={`<SegmentedControl
+  label="View"
+  options={[
+    { label: 'List', href: '?view=list', selected: true },
+    { label: 'Grid', href: '?view=grid' },
+  ]}
+/>`}
+      />
     </>
   )
 }

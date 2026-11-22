@@ -1,4 +1,5 @@
 import { Checkbox, CheckboxGroup } from '../../src'
+import { CodeBlock } from '../code-block'
 
 export function CheckboxSection() {
   return (
@@ -24,6 +25,22 @@ export function CheckboxSection() {
         />
       </div>
       <p class="type-hint">Each row is at least 44px tall, so it is easy to tap.</p>
+      <CodeBlock
+        title="Basic use"
+        code={`<Checkbox id="remember" name="remember" label="Remember me on this device" />`}
+      />
+      <CodeBlock
+        title="A group"
+        code={`<CheckboxGroup
+  id="genres"
+  legend="Favourite genres"
+  name="genre"
+  options={[
+    { value: 'drama', label: 'Drama', checked: true },
+    { value: 'comedy', label: 'Comedy' },
+  ]}
+/>`}
+      />
     </>
   )
 }

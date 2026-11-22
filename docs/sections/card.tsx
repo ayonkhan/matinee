@@ -1,4 +1,5 @@
 import { Card } from '../../src'
+import { CodeBlock } from '../code-block'
 
 export function CardSection() {
   return (
@@ -20,6 +21,18 @@ export function CardSection() {
           <p class="type-body">No padding, so an image or banner can reach the edges.</p>
         </div>
       </Card>
+      <CodeBlock
+        title="Basic use"
+        code={`<Card title="Account" padding="lg">
+  <p>Settings go here.</p>
+</Card>`}
+      />
+      <CodeBlock
+        title="As a section, floating"
+        code={`<Card as="section" floating>
+  <p>A menu or popover.</p>
+</Card>`}
+      />
     </>
   )
 }

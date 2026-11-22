@@ -1,4 +1,5 @@
 import { Stat } from '../../src'
+import { CodeBlock } from '../code-block'
 
 export function StatSection() {
   return (
@@ -14,6 +15,14 @@ export function StatSection() {
         </div>
         <p class="type-hint">A tile with a link lights up on hover and takes you to where the number comes from.</p>
       </div>
+      <CodeBlock
+        title="Basic use"
+        code={`<Stat label="Films seen" value={128} />`}
+      />
+      <CodeBlock
+        title="As a link"
+        code={`<Stat label="Watchlist" value={24} hint="Films to see" href="/watchlist" />`}
+      />
     </>
   )
 }
