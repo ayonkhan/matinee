@@ -9,7 +9,7 @@ const fonts = `<link rel="preconnect" href="https://fonts.googleapis.com" />
 />`
 
 const firstPage = `import { Hono } from 'hono'
-import { Button, Card } from 'matinee'
+import { Button, Card } from '@ayonkhan/matinee'
 
 const app = new Hono()
 
@@ -21,7 +21,7 @@ app.get('/', (c) =>
       </head>
       <body class="bg-page font-sans text-ink">
         <Card title="Hello">
-          <Button href="/films">Browse films</Button>
+          <Button href="/next">Continue</Button>
         </Card>
       </body>
     </html>,
@@ -50,9 +50,11 @@ export function GettingStartedSection() {
 
       <Step number={1} title="Install">
         <p class="type-body max-w-xl text-ink-soft">
-          Matinee is not on npm yet. Until it is, install it from GitHub. Hono comes with your app.
+          Add the package. Hono and Tailwind v4 are peer dependencies, so add them too if your project does not have
+          them yet.
         </p>
-        <CodeBlock language="bash" code="pnpm add github:ayonkhan/matinee" />
+        <CodeBlock language="bash" code="pnpm add @ayonkhan/matinee" />
+        <CodeBlock language="bash" code="pnpm add hono tailwindcss" />
       </Step>
 
       <Step number={2} title="Load the theme">
@@ -63,9 +65,9 @@ export function GettingStartedSection() {
         <CodeBlock
           language="css"
           code={`@import "tailwindcss";
-@import "matinee/theme.css";
+@import "@ayonkhan/matinee/theme.css";
 
-@source "../node_modules/matinee/src";`}
+@source "../node_modules/@ayonkhan/matinee/dist";`}
         />
       </Step>
 

@@ -1,5 +1,9 @@
 # Matinee
 
+[![npm](https://img.shields.io/npm/v/@ayonkhan/matinee)](https://www.npmjs.com/package/@ayonkhan/matinee)
+[![License](https://img.shields.io/github/license/ayonkhan/matinee)](LICENSE)
+[![Release](https://img.shields.io/github/v/release/ayonkhan/matinee)](https://github.com/ayonkhan/matinee/releases)
+
 A mobile-first design system for [Hono](https://hono.dev/), with [Tailwind](https://tailwindcss.com/) v4 tokens and JSX components for buttons, forms, cards and navigation, in light and dark. I built it for my own projects, and you can use it too.
 
 You can see every component, with code to copy, in the [docs](https://matinee.ayonkhan.ca/).
@@ -104,7 +108,7 @@ export function Welcome() {
 | --- | --- |
 | Actions | ActionBar, Button |
 | Display | Avatar, Badge, Card, Cover, Disclosure, EmptyState, Notice, Stars, Stat |
-| Forms | Checkbox, CodeInput, Field, Fieldset, FileInput, RadioGroup, Select, Slider, Toggle |
+| Forms | Checkbox, CheckboxGroup, CodeInput, Field, Fieldset, FileInput, RadioGroup, Select, Slider, Toggle |
 | Navigation | BottomNav, SegmentedControl, TopBar |
 
 The theme also has tokens for colours, type and radii. The [docs](https://matinee.ayonkhan.ca/) show each one.

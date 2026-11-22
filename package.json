@@ -1,7 +1,6 @@
 {
   "name": "@ayonkhan/matinee",
-  "version": "0.0.0",
-  "private": true,
+  "version": "0.1.0",
   "description": "A mobile-first design system with Tailwind v4 tokens and JSX components. Built with Hono.",
   "keywords": [
     "design-system",
@@ -19,7 +18,7 @@
     "url": "git+https://github.com/ayonkhan/matinee.git"
   },
   "bugs": "https://github.com/ayonkhan/matinee/issues",
-  "homepage": "https://github.com/ayonkhan/matinee#readme",
+  "homepage": "https://matinee.ayonkhan.ca",
   "type": "module",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
