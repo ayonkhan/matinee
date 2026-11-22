@@ -9,7 +9,7 @@ export const focusRing =
 export const floatingBar =
   'pointer-events-auto flex items-center rounded-full border border-line bg-card shadow-float'
 
-// "fixed" floats above the page on phones only. "inline" is for previews and the gallery.
+// "fixed" floats above the page on phones only. "inline" is for previews and the docs.
 export function dock(placement: Placement, extra?: string) {
   return [
     placement === 'fixed'

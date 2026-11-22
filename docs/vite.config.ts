@@ -3,5 +3,5 @@ import tailwindcss from '@tailwindcss/vite'
 import { defineConfig } from 'vite'
 
 export default defineConfig({
-  plugins: [tailwindcss(), devServer({ entry: 'gallery/app.tsx' })],
+  plugins: [tailwindcss(), devServer({ entry: 'docs/app.tsx' })],
 })

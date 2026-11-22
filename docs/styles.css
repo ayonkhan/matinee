@@ -1,7 +1,7 @@
 @import "tailwindcss";
 @import "../src/theme.css";
 
-/* Tell Tailwind to look for classes in the kit as well as in the gallery. */
+/* Tell Tailwind to look for classes in the kit as well as in the docs. */
 @source "../src";
 
 /* Sidebar links glide to their section. */

@@ -1,6 +1,6 @@
 import { Poster } from '../../src'
 
-// Sample artwork drawn here, so the public gallery never shows a real studio poster.
+// Sample artwork drawn here, so the public docs never shows a real studio poster.
 function sampleArt(from: string, to: string) {
   const svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 300"><defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="${from}"/><stop offset="1" stop-color="${to}"/></linearGradient></defs><rect width="200" height="300" fill="url(#g)"/></svg>`
   return `data:image/svg+xml;utf8,${encodeURIComponent(svg)}`
