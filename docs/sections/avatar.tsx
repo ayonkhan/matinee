@@ -1,4 +1,5 @@
 import { Avatar } from '../../src'
+import { CodeBlock } from '../code-block'
 
 // Sample picture drawn here, so the public docs never shows a real person.
 function samplePicture(from: string, to: string) {
@@ -29,6 +30,11 @@ export function AvatarSection() {
         <Avatar name="quiet-otter-1204" src={pictureBlue} decorative />
         <span class="type-label">quiet-otter-1204</span>
       </div>
+      <CodeBlock title="Basic use" code={'<Avatar name="quiet-otter-1204" src="/a.jpg" size="lg" />'} />
+      <CodeBlock
+        title="Next to the name"
+        code={'<Avatar name="quiet-otter-1204" decorative />\n<span>quiet-otter-1204</span>'}
+      />
     </>
   )
 }

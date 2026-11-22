@@ -1,5 +1,6 @@
 import { raw } from 'hono/html'
 import { SegmentedControl } from '../src'
+import { copyScript } from './code-block'
 import { Section } from './section'
 import { groups } from './sections'
 
@@ -127,6 +128,7 @@ export function Page(props: { theme: Theme }) {
               <SiteFooter class="border-t border-line px-4 py-6 lg:hidden" />
             </div>
           </div>
+          <script>{raw(copyScript)}</script>
         </body>
       </html>
     </>

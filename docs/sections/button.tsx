@@ -1,4 +1,5 @@
 import { Button } from '../../src'
+import { CodeBlock } from '../code-block'
 
 export function ButtonSection() {
   return (
@@ -13,6 +14,11 @@ export function ButtonSection() {
       <div class="max-w-sm">
         <Button fullWidth>Full width</Button>
       </div>
+      <CodeBlock title="Basic use" code={'<Button type="submit">Save</Button>'} />
+      <CodeBlock
+        title="As a link, full width"
+        code={'<Button href="/films/new" fullWidth>\n  Add film\n</Button>'}
+      />
     </>
   )
 }

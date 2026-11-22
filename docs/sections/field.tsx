@@ -1,4 +1,5 @@
 import { Field } from '../../src'
+import { CodeBlock } from '../code-block'
 
 export function FieldSection() {
   return (
@@ -34,6 +35,14 @@ export function FieldSection() {
         rows={3}
         value="Night owl. I watch too many films and rate them harshly."
         hint="Shown on your profile. Up to 200 characters."
+      />
+      <CodeBlock
+        title="Basic use"
+        code={'<Field id="email" label="Email address" type="email" required hint="Used to sign in." />'}
+      />
+      <CodeBlock
+        title="With an error"
+        code={'<Field id="site" label="Website" type="url" error="Enter a full address, starting with https://" />'}
       />
     </>
   )
