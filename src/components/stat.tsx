@@ -12,7 +12,7 @@ const tile = 'flex flex-col rounded-tile border border-line bg-card p-4 text-ink
 const linkClasses =
   'hover:bg-raised focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent-text'
 
-// One number with a name, such as the films you have seen.
+// One number with a name, such as the items you have saved.
 export function Stat(props: StatProps) {
   const { label, value, hint, href } = props
 

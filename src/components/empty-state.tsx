@@ -4,7 +4,7 @@ import { Button } from './button'
 export type EmptyStateProps = PropsWithChildren<{
   title: string
   icon?: Child
-  // One next step, such as adding the first film.
+  // One next step, such as adding the first item.
   action?: { label: string; href: string }
   class?: string
 }>

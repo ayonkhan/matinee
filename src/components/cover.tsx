@@ -22,7 +22,7 @@ export function Cover(props: CoverProps) {
 
   const classes = [frame, sizes[size], props.class ?? ''].filter(Boolean).join(' ')
 
-  // No cover found: show a quiet placeholder with the film's title instead of a broken image.
+  // No cover found: show a quiet placeholder with the item's title instead of a broken image.
   if (!src) {
     return (
       <div role="img" aria-label={`No cover available for ${title}`} class={`${classes} flex items-center justify-center p-2`}>
