@@ -1,8 +1,8 @@
 import { raw } from 'hono/html'
-import { SegmentedControl } from '../src'
+import { Disclosure, SegmentedControl } from '../src'
 import { copyScript } from './code-block'
 import { Section } from './section'
-import { groups } from './sections'
+import { groups, type SectionEntry } from './sections'
 
 const fonts =
   'https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700&family=Inter:wght@400;500;600&display=swap'
@@ -33,20 +33,48 @@ function ThemeSwitch(props: { theme: Theme }) {
   )
 }
 
+const linkClasses = 'rounded-control px-3 py-1.5 text-sm text-muted no-underline hover:bg-raised hover:text-ink'
+
+function SectionLink(props: { section: SectionEntry; class?: string }) {
+  return (
+    <a href={`#${props.section.id}`} class={`${linkClasses} ${props.class ?? ''}`}>
+      {props.section.title}
+    </a>
+  )
+}
+
+// The sections of a group, in the order they first appear, split by category.
+function categoriesOf(sections: SectionEntry[]) {
+  const categories = new Map<string, SectionEntry[]>()
+
+  for (const section of sections) {
+    const name = section.category ?? ''
+
+    categories.set(name, [...(categories.get(name) ?? []), section])
+  }
+
+  return [...categories]
+}
+
 function SectionLinks() {
   return (
     <nav aria-label="Sections" class="flex flex-col gap-6">
       {groups.map((group) => (
         <div class="flex flex-col gap-1">
-          <p class="type-overline px-3 pb-1">{group.title}</p>
-          {group.sections.map((section) => (
-            <a
-              href={`#${section.id}`}
-              class="rounded-control px-3 py-1.5 text-sm text-muted no-underline hover:bg-raised hover:text-ink"
-            >
-              {section.title}
-            </a>
-          ))}
+          <p class="px-3 pb-1 font-sans text-xs font-bold tracking-[0.08em] text-ink uppercase">{group.title}</p>
+          {categoriesOf(group.sections).map(([category, sections]) =>
+            category ? (
+              <Disclosure title={category} meta={sections.length} class="[&>summary]:font-medium [&>summary]:text-ink-soft">
+                <div class="-mx-3 flex flex-col gap-1">
+                  {sections.map((section) => (
+                    <SectionLink section={section} class="pl-6" />
+                  ))}
+                </div>
+              </Disclosure>
+            ) : (
+              sections.map((section) => <SectionLink section={section} />)
+            ),
+          )}
         </div>
       ))}
     </nav>

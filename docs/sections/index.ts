@@ -26,10 +26,14 @@ import { ToggleSection } from './toggle'
 import { TopBarSection } from './top-bar'
 import { TypographySection } from './typography'
 
+// The folding groups in the sidebar. Foundations and Start have none.
+export type SectionCategory = 'Actions' | 'Display' | 'Forms' | 'Navigation'
+
 export type SectionEntry = {
   id: string
   title: string
   Component: FC
+  category?: SectionCategory
 }
 
 export type SectionGroup = {
@@ -52,30 +56,31 @@ export const groups: SectionGroup[] = [
   },
   {
     title: 'Components',
+    // Keep each category together and in A to Z order. The page follows this order too.
     sections: [
-      { id: 'action-bar', title: 'ActionBar', Component: ActionBarSection },
-      { id: 'avatar', title: 'Avatar', Component: AvatarSection },
-      { id: 'badge', title: 'Badge', Component: BadgeSection },
-      { id: 'bottom-nav', title: 'BottomNav', Component: BottomNavSection },
-      { id: 'button', title: 'Button', Component: ButtonSection },
-      { id: 'card', title: 'Card', Component: CardSection },
-      { id: 'checkbox', title: 'Checkbox', Component: CheckboxSection },
-      { id: 'code-input', title: 'CodeInput', Component: CodeInputSection },
-      { id: 'disclosure', title: 'Disclosure', Component: DisclosureSection },
-      { id: 'empty-state', title: 'EmptyState', Component: EmptyStateSection },
-      { id: 'field', title: 'Field', Component: FieldSection },
-      { id: 'fieldset', title: 'Fieldset', Component: FieldsetSection },
-      { id: 'file-input', title: 'FileInput', Component: FileInputSection },
-      { id: 'notice', title: 'Notice', Component: NoticeSection },
-      { id: 'poster', title: 'Poster', Component: PosterSection },
-      { id: 'radio-group', title: 'RadioGroup', Component: RadioGroupSection },
-      { id: 'segmented-control', title: 'SegmentedControl', Component: SegmentedControlSection },
-      { id: 'select', title: 'Select', Component: SelectSection },
-      { id: 'slider', title: 'Slider', Component: SliderSection },
-      { id: 'stars', title: 'Stars', Component: StarsSection },
-      { id: 'stat', title: 'Stat', Component: StatSection },
-      { id: 'toggle', title: 'Toggle', Component: ToggleSection },
-      { id: 'top-bar', title: 'TopBar', Component: TopBarSection },
+      { id: 'action-bar', title: 'ActionBar', Component: ActionBarSection, category: 'Actions' },
+      { id: 'button', title: 'Button', Component: ButtonSection, category: 'Actions' },
+      { id: 'avatar', title: 'Avatar', Component: AvatarSection, category: 'Display' },
+      { id: 'badge', title: 'Badge', Component: BadgeSection, category: 'Display' },
+      { id: 'card', title: 'Card', Component: CardSection, category: 'Display' },
+      { id: 'disclosure', title: 'Disclosure', Component: DisclosureSection, category: 'Display' },
+      { id: 'empty-state', title: 'EmptyState', Component: EmptyStateSection, category: 'Display' },
+      { id: 'notice', title: 'Notice', Component: NoticeSection, category: 'Display' },
+      { id: 'poster', title: 'Poster', Component: PosterSection, category: 'Display' },
+      { id: 'stars', title: 'Stars', Component: StarsSection, category: 'Display' },
+      { id: 'stat', title: 'Stat', Component: StatSection, category: 'Display' },
+      { id: 'checkbox', title: 'Checkbox', Component: CheckboxSection, category: 'Forms' },
+      { id: 'code-input', title: 'CodeInput', Component: CodeInputSection, category: 'Forms' },
+      { id: 'field', title: 'Field', Component: FieldSection, category: 'Forms' },
+      { id: 'fieldset', title: 'Fieldset', Component: FieldsetSection, category: 'Forms' },
+      { id: 'file-input', title: 'FileInput', Component: FileInputSection, category: 'Forms' },
+      { id: 'radio-group', title: 'RadioGroup', Component: RadioGroupSection, category: 'Forms' },
+      { id: 'select', title: 'Select', Component: SelectSection, category: 'Forms' },
+      { id: 'slider', title: 'Slider', Component: SliderSection, category: 'Forms' },
+      { id: 'toggle', title: 'Toggle', Component: ToggleSection, category: 'Forms' },
+      { id: 'bottom-nav', title: 'BottomNav', Component: BottomNavSection, category: 'Navigation' },
+      { id: 'segmented-control', title: 'SegmentedControl', Component: SegmentedControlSection, category: 'Navigation' },
+      { id: 'top-bar', title: 'TopBar', Component: TopBarSection, category: 'Navigation' },
     ],
   },
 ]
