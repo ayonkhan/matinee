@@ -3,6 +3,7 @@ import { Disclosure, SegmentedControl } from '../src'
 import { copyScript } from './code-block'
 import { Section } from './section'
 import { groups, type SectionEntry } from './sections'
+import { sidebarScript } from './sidebar-script'
 
 const fonts =
   'https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700&family=Inter:wght@400;500;600&display=swap'
@@ -33,7 +34,8 @@ function ThemeSwitch(props: { theme: Theme }) {
   )
 }
 
-const linkClasses = 'rounded-control px-3 py-1.5 text-sm text-muted no-underline hover:bg-raised hover:text-ink'
+const linkClasses =
+  'rounded-control px-3 py-1.5 text-sm text-muted no-underline hover:bg-raised hover:text-ink aria-[current=location]:bg-raised aria-[current=location]:font-medium aria-[current=location]:text-ink'
 
 function SectionLink(props: { section: SectionEntry; class?: string }) {
   return (
@@ -157,6 +159,7 @@ export function Page(props: { theme: Theme }) {
             </div>
           </div>
           <script>{raw(copyScript)}</script>
+          <script>{raw(sidebarScript)}</script>
         </body>
       </html>
     </>
