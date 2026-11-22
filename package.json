@@ -1,17 +1,55 @@
 {
-  "name": "matinee",
+  "name": "@ayonkhan/matinee",
   "version": "0.0.0",
   "private": true,
   "description": "A mobile-first design system with Tailwind v4 tokens and JSX components. Built with Hono.",
+  "keywords": [
+    "design-system",
+    "hono",
+    "jsx",
+    "tailwindcss",
+    "ui-kit",
+    "mobile-first",
+    "components"
+  ],
+  "author": "Ayon Khan",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ayonkhan/matinee.git"
+  },
+  "bugs": "https://github.com/ayonkhan/matinee/issues",
+  "homepage": "https://github.com/ayonkhan/matinee#readme",
   "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    },
+    "./theme.css": "./src/theme.css",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist",
+    "src/theme.css"
+  ],
+  "sideEffects": false,
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "typecheck": "tsc --noEmit",
     "test": "vitest run",
-    "dev": "vite --config docs/vite.config.ts"
+    "dev": "vite --config docs/vite.config.ts",
+    "build": "rm -rf dist && tsc -p tsconfig.build.json",
+    "prepack": "pnpm build",
+    "prepublishOnly": "pnpm typecheck && pnpm test"
   },
   "peerDependencies": {
-    "hono": "^4"
+    "hono": "^4",
+    "tailwindcss": "^4"
   },
   "devDependencies": {
     "@hono/vite-dev-server": "^0.26.1",
