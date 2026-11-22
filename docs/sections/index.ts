@@ -8,6 +8,7 @@ import { CardSection } from './card'
 import { CheckboxSection } from './checkbox'
 import { CodeInputSection } from './code-input'
 import { ColoursSection } from './colours'
+import { CoverSection } from './cover'
 import { DisclosureSection } from './disclosure'
 import { EmptyStateSection } from './empty-state'
 import { FieldSection } from './field'
@@ -15,7 +16,6 @@ import { FieldsetSection } from './fieldset'
 import { FileInputSection } from './file-input'
 import { GettingStartedSection } from './getting-started'
 import { NoticeSection } from './notice'
-import { PosterSection } from './poster'
 import { RadioGroupSection } from './radio-group'
 import { SegmentedControlSection } from './segmented-control'
 import { SelectSection } from './select'
@@ -63,10 +63,10 @@ export const groups: SectionGroup[] = [
       { id: 'avatar', title: 'Avatar', Component: AvatarSection, category: 'Display' },
       { id: 'badge', title: 'Badge', Component: BadgeSection, category: 'Display' },
       { id: 'card', title: 'Card', Component: CardSection, category: 'Display' },
+      { id: 'cover', title: 'Cover', Component: CoverSection, category: 'Display' },
       { id: 'disclosure', title: 'Disclosure', Component: DisclosureSection, category: 'Display' },
       { id: 'empty-state', title: 'EmptyState', Component: EmptyStateSection, category: 'Display' },
       { id: 'notice', title: 'Notice', Component: NoticeSection, category: 'Display' },
-      { id: 'poster', title: 'Poster', Component: PosterSection, category: 'Display' },
       { id: 'stars', title: 'Stars', Component: StarsSection, category: 'Display' },
       { id: 'stat', title: 'Stat', Component: StatSection, category: 'Display' },
       { id: 'checkbox', title: 'Checkbox', Component: CheckboxSection, category: 'Forms' },

@@ -103,7 +103,7 @@ export function Welcome() {
 | Group | Components |
 | --- | --- |
 | Actions | ActionBar, Button |
-| Display | Avatar, Badge, Card, Disclosure, EmptyState, Notice, Poster, Stars, Stat |
+| Display | Avatar, Badge, Card, Cover, Disclosure, EmptyState, Notice, Stars, Stat |
 | Forms | Checkbox, CodeInput, Field, Fieldset, FileInput, RadioGroup, Select, Slider, Toggle |
 | Navigation | BottomNav, SegmentedControl, TopBar |
 

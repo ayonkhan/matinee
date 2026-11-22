@@ -1,14 +1,14 @@
-export type PosterSize = 'sm' | 'md' | 'lg' | 'fill'
+export type CoverSize = 'sm' | 'md' | 'lg' | 'fill'
 
-export type PosterProps = {
+export type CoverProps = {
   title: string
   src?: string
-  size?: PosterSize
+  size?: CoverSize
   class?: string
 }
 
-// Posters are always 2:3. "fill" takes the width of whatever holds it, which suits grids.
-const sizes: Record<PosterSize, string> = {
+// Covers are always 2:3. "fill" takes the width of whatever holds it, which suits grids.
+const sizes: Record<CoverSize, string> = {
   sm: 'w-12',
   md: 'w-24',
   lg: 'w-40',
@@ -17,15 +17,15 @@ const sizes: Record<PosterSize, string> = {
 
 const frame = 'aspect-[2/3] shrink-0 overflow-hidden rounded-tile border border-line bg-raised'
 
-export function Poster(props: PosterProps) {
+export function Cover(props: CoverProps) {
   const { title, src, size = 'md' } = props
 
   const classes = [frame, sizes[size], props.class ?? ''].filter(Boolean).join(' ')
 
-  // No poster found: show a quiet placeholder with the film's title instead of a broken image.
+  // No cover found: show a quiet placeholder with the film's title instead of a broken image.
   if (!src) {
     return (
-      <div role="img" aria-label={`No poster available for ${title}`} class={`${classes} flex items-center justify-center p-2`}>
+      <div role="img" aria-label={`No cover available for ${title}`} class={`${classes} flex items-center justify-center p-2`}>
         <span class="line-clamp-4 text-center text-xs font-medium text-muted">{title}</span>
       </div>
     )
@@ -35,7 +35,7 @@ export function Poster(props: PosterProps) {
     <div class={classes}>
       <img
         src={src}
-        alt={`Poster of ${title}`}
+        alt={`Cover of ${title}`}
         width="200"
         height="300"
         loading="lazy"

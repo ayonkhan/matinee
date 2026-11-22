@@ -6,18 +6,18 @@ const has = (html: string, attribute: string) => new RegExp(`\\s${attribute}(=""
 
 describe('Toggle', () => {
   it('is a checkbox marked as a switch', () => {
-    const html = render(<Toggle id="posters" label="Show posters" />)
+    const html = render(<Toggle id="covers" label="Show covers" />)
 
     expect(html).toContain('type="checkbox"')
     expect(html).toContain('role="switch"')
   })
 
   it('connects the label to the switch', () => {
-    const html = render(<Toggle id="posters" label="Show posters" />)
+    const html = render(<Toggle id="covers" label="Show covers" />)
 
-    expect(html).toContain('for="posters"')
-    expect(html).toContain('id="posters"')
-    expect(html).toContain('Show posters')
+    expect(html).toContain('for="covers"')
+    expect(html).toContain('id="covers"')
+    expect(html).toContain('Show covers')
   })
 
   it('is off by default and can start on', () => {
@@ -26,9 +26,9 @@ describe('Toggle', () => {
   })
 
   it('sends a name and value with the form', () => {
-    const html = render(<Toggle id="a" label="A" name="posters" value="yes" />)
+    const html = render(<Toggle id="a" label="A" name="covers" value="yes" />)
 
-    expect(html).toContain('name="posters"')
+    expect(html).toContain('name="covers"')
     expect(html).toContain('value="yes"')
   })
 
