@@ -12,6 +12,7 @@ import { EmptyStateSection } from './empty-state'
 import { FieldSection } from './field'
 import { FieldsetSection } from './fieldset'
 import { FileInputSection } from './file-input'
+import { GettingStartedSection } from './getting-started'
 import { NoticeSection } from './notice'
 import { PosterSection } from './poster'
 import { RadioGroupSection } from './radio-group'
@@ -37,6 +38,10 @@ export type SectionGroup = {
 
 // Add a section here and it shows up in the sidebar and on the page.
 export const groups: SectionGroup[] = [
+  {
+    title: 'Start',
+    sections: [{ id: 'getting-started', title: 'Getting started', Component: GettingStartedSection }],
+  },
   {
     title: 'Foundations',
     sections: [

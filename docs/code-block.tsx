@@ -37,8 +37,8 @@ document.querySelectorAll('[data-copy]').forEach(function (button) {
 })
 `
 
-export function CodeBlock(props: { code: string; title?: string }) {
-  const { code, title } = props
+export function CodeBlock(props: { code: string; title?: string; language?: string }) {
+  const { code, title, language = 'tsx' } = props
 
   return (
     <div class="flex flex-col gap-2">
@@ -46,7 +46,7 @@ export function CodeBlock(props: { code: string; title?: string }) {
 
       <div data-code class="overflow-hidden rounded-tile border border-line bg-sunken">
         <div class="flex items-center justify-between border-b border-line px-3 py-1.5">
-          <span class="type-hint">tsx</span>
+          <span class="type-hint">{language}</span>
           <button
             type="button"
             data-copy

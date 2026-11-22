@@ -35,6 +35,11 @@ describe('CodeBlock', () => {
     expect(render(<CodeBlock code={code} />)).not.toContain('type-overline')
   })
 
+  it('names the language, tsx unless told otherwise', () => {
+    expect(render(<CodeBlock code="x" />)).toContain('>tsx<')
+    expect(render(<CodeBlock code="pnpm add x" language="bash" />)).toContain('>bash<')
+  })
+
   it('has a copy button that stays hidden until the script shows it', () => {
     const html = render(<CodeBlock code={code} />)
 
