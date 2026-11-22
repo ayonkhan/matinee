@@ -3,10 +3,6 @@ import { Page } from './page'
 
 const app = new Hono()
 
-app.get('/', (c) => {
-  const theme = c.req.query('theme') === 'dark' ? 'dark' : 'light'
-
-  return c.html(<Page theme={theme} />)
-})
+app.get('/', (c) => c.html(<Page />))
 
 export default app

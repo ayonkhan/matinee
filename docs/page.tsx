@@ -4,11 +4,10 @@ import { copyScript } from './code-block'
 import { Section } from './section'
 import { groups, type SectionEntry } from './sections'
 import { sidebarScript } from './sidebar-script'
+import { themeScript } from './theme-script'
 
 const fonts =
   'https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700&family=Inter:wght@400;500;600&display=swap'
-
-type Theme = 'dark' | 'light'
 
 function Brand() {
   return (
@@ -21,14 +20,14 @@ function Brand() {
   )
 }
 
-function ThemeSwitch(props: { theme: Theme }) {
+function ThemeSwitch() {
   return (
     <SegmentedControl
       label="Theme"
       class="w-fit shrink-0"
       options={[
-        { label: 'Light', href: '?theme=light', selected: props.theme === 'light' },
-        { label: 'Dark', href: '?theme=dark', selected: props.theme === 'dark' },
+        { label: 'Light', href: '?theme=light', selected: true },
+        { label: 'Dark', href: '?theme=dark' },
       ]}
     />
   )
@@ -105,11 +104,11 @@ function SiteFooter(props: { class?: string }) {
   )
 }
 
-export function Page(props: { theme: Theme }) {
+export function Page() {
   return (
     <>
       {raw('<!DOCTYPE html>')}
-      <html lang="en" data-theme={props.theme}>
+      <html lang="en" data-theme="light">
         <head>
           <meta charset="utf-8" />
           <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -118,12 +117,13 @@ export function Page(props: { theme: Theme }) {
           <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
           <link rel="stylesheet" href={fonts} />
           <link rel="stylesheet" href="/docs/styles.css" />
+          <script>{raw(themeScript)}</script>
         </head>
         <body class="min-h-screen bg-page font-sans text-ink">
           <div class="mx-auto flex min-h-screen max-w-7xl">
             <aside class="sticky top-0 hidden h-screen w-64 shrink-0 flex-col gap-8 overflow-y-auto border-r border-line p-6 lg:flex">
               <Brand />
-              <ThemeSwitch theme={props.theme} />
+              <ThemeSwitch />
               <SectionLinks />
               <SiteFooter class="mt-auto border-t border-line pt-4" />
             </aside>
@@ -132,7 +132,7 @@ export function Page(props: { theme: Theme }) {
               <header class="sticky top-0 z-30 flex flex-col gap-3 border-b border-line bg-page px-4 py-3 lg:hidden">
                 <div class="flex items-center justify-between gap-4">
                   <h1 class="font-display text-xl font-bold">Matinee</h1>
-                  <ThemeSwitch theme={props.theme} />
+                  <ThemeSwitch />
                 </div>
                 <details class="group">
                   <summary class="flex cursor-pointer list-none items-center justify-between rounded-control border border-line bg-card px-3 py-2 text-sm font-medium [&::-webkit-details-marker]:hidden">

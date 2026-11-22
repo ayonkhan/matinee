@@ -156,5 +156,8 @@ vite.config.ts.timestamp-*
 .nx/workspace-data
 .nx/migrate-runs
 
+# Static docs site output
+docs-dist
+
 # macOS
 .DS_Store

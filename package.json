@@ -44,6 +44,7 @@
     "test": "vitest run",
     "dev": "vite --config docs/vite.config.ts",
     "build": "tsdown",
+    "docs:build": "vite build --config docs/vite.build.config.ts && tailwindcss -i docs/styles.css -o docs-dist/docs/styles.css --minify",
     "prepack": "pnpm build",
     "prepublishOnly": "pnpm typecheck && pnpm test"
   },
@@ -53,6 +54,8 @@
   },
   "devDependencies": {
     "@hono/vite-dev-server": "^0.26.1",
+    "@hono/vite-ssg": "^0.3.3",
+    "@tailwindcss/cli": "^4.3.5",
     "@tailwindcss/vite": "^4.3.5",
     "hono": "^4",
     "tailwindcss": "^4.3.5",
