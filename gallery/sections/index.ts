@@ -8,6 +8,7 @@ import { CardSection } from './card'
 import { CheckboxSection } from './checkbox'
 import { CodeInputSection } from './code-input'
 import { ColoursSection } from './colours'
+import { EmptyStateSection } from './empty-state'
 import { FieldSection } from './field'
 import { FieldsetSection } from './fieldset'
 import { FileInputSection } from './file-input'
@@ -54,6 +55,7 @@ export const groups: SectionGroup[] = [
       { id: 'card', title: 'Card', Component: CardSection },
       { id: 'checkbox', title: 'Checkbox', Component: CheckboxSection },
       { id: 'code-input', title: 'CodeInput', Component: CodeInputSection },
+      { id: 'empty-state', title: 'EmptyState', Component: EmptyStateSection },
       { id: 'field', title: 'Field', Component: FieldSection },
       { id: 'fieldset', title: 'Fieldset', Component: FieldsetSection },
       { id: 'file-input', title: 'FileInput', Component: FileInputSection },

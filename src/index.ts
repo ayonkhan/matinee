@@ -17,6 +17,8 @@ export type { CheckboxGroupOption, CheckboxGroupProps } from './components/check
 export { CodeInput } from './components/code-input'
 export type { CodeInputProps } from './components/code-input'
 export type { Placement } from './components/dock'
+export { EmptyState } from './components/empty-state'
+export type { EmptyStateProps } from './components/empty-state'
 export { Field } from './components/field'
 export type { FieldProps } from './components/field'
 export { Fieldset } from './components/fieldset'
