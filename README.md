@@ -29,6 +29,7 @@ You can see every component, with code to copy, in the [docs](https://matinee.ay
 - **Light and dark:** one theme with a dark version, switched with a `data-theme` attribute.
 - **Server rendered:** the components are plain Hono JSX that render to HTML, and they need no JavaScript.
 - **Tailwind v4 tokens:** colours, type and radii are theme tokens, so you use them as classes, such as `bg-page` and `text-ink`.
+- **Typed:** written in TypeScript, with the types included.
 - **Accessible:** focus rings, labels and ARIA attributes, covered by tests.
 - **Tested:** every component has tests.
 - **Free:** MIT licensed.
@@ -37,7 +38,7 @@ You can see every component, with code to copy, in the [docs](https://matinee.ay
 
 - [Hono](https://hono.dev/) 4
 - [Tailwind CSS](https://tailwindcss.com/) 4
-- A bundler such as [Vite](https://vite.dev/) or [Wrangler](https://developers.cloudflare.com/workers/wrangler/), because Matinee ships as ES modules
+- A way to build Tailwind, such as its [Vite plugin](https://tailwindcss.com/docs/installation/using-vite) or its [command line tool](https://tailwindcss.com/docs/installation/tailwind-cli)
 
 ## Install
 
@@ -45,6 +46,12 @@ You can see every component, with code to copy, in the [docs](https://matinee.ay
 
 ```bash
 pnpm add @ayonkhan/matinee
+```
+
+Hono and Tailwind are peer dependencies. If your project doesn't have them yet, add them too:
+
+```bash
+pnpm add hono tailwindcss
 ```
 
 ### 2. Load the Theme
@@ -114,7 +121,7 @@ The theme also has tokens for colours, type and radii. The [docs](https://matine
 
 ## Tests
 
-To run the tests yourself:
+To work on Matinee itself, clone the repo and run `pnpm install`. Then you can run the tests:
 
 ```bash
 pnpm test
