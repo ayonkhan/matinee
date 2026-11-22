@@ -13,10 +13,10 @@ describe('Button', () => {
   })
 
   it('renders a link when it has an href', () => {
-    const html = render(<Button href="/films/new">Add film</Button>)
+    const html = render(<Button href="/items/new">Add item</Button>)
 
     expect(html).toContain('<a ')
-    expect(html).toContain('href="/films/new"')
+    expect(html).toContain('href="/items/new"')
     expect(html).not.toContain('<button')
   })
 
@@ -32,8 +32,8 @@ describe('Button', () => {
 
   it('turns a link into a disabled button when disabled', () => {
     const html = render(
-      <Button href="/films/new" disabled>
-        Add film
+      <Button href="/items/new" disabled>
+        Add item
       </Button>,
     )
 

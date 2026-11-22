@@ -5,14 +5,14 @@ const render = (node: unknown) => String(node)
 
 describe('Stat', () => {
   it('shows the label and the value', () => {
-    const html = render(<Stat label="Films seen" value={128} />)
+    const html = render(<Stat label="Items added" value={128} />)
 
-    expect(html).toContain('Films seen')
+    expect(html).toContain('Items added')
     expect(html).toContain('128')
   })
 
   it('reads as a term and its value', () => {
-    const html = render(<Stat label="Films seen" value={128} />)
+    const html = render(<Stat label="Items added" value={128} />)
 
     expect(html).toContain('<dl')
     expect(html).toContain('<dt')
@@ -20,17 +20,17 @@ describe('Stat', () => {
   })
 
   it('puts the label before the value', () => {
-    const html = render(<Stat label="Films seen" value={128} />)
+    const html = render(<Stat label="Items added" value={128} />)
 
-    expect(html.indexOf('Films seen')).toBeLessThan(html.indexOf('128'))
+    expect(html.indexOf('Items added')).toBeLessThan(html.indexOf('128'))
   })
 
   it('accepts text as a value', () => {
-    expect(render(<Stat label="Top genre" value="Drama" />)).toContain('Drama')
+    expect(render(<Stat label="Top topic" value="Design" />)).toContain('Design')
   })
 
   it('keeps a zero', () => {
-    expect(render(<Stat label="Watchlist" value={0} />)).toContain('>0<')
+    expect(render(<Stat label="Saved" value={0} />)).toContain('>0<')
   })
 
   it('lines numbers up with equal width digits', () => {
@@ -53,10 +53,10 @@ describe('Stat', () => {
   })
 
   it('becomes a link with an href', () => {
-    const html = render(<Stat label="Watchlist" value={24} href="/watchlist" />)
+    const html = render(<Stat label="Saved" value={24} href="/saved" />)
 
     expect(html).toContain('<a')
-    expect(html).toContain('href="/watchlist"')
+    expect(html).toContain('href="/saved"')
     expect(html).toContain('hover:bg-raised')
   })
 

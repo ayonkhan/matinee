@@ -33,9 +33,9 @@ describe('Toggle', () => {
   })
 
   it('shows a hint and links it to the switch', () => {
-    const html = render(<Toggle id="a" label="A" hint="Shown above each film." />)
+    const html = render(<Toggle id="a" label="A" hint="Shown above each item." />)
 
-    expect(html).toContain('Shown above each film.')
+    expect(html).toContain('Shown above each item.')
     expect(html).toContain('id="a-hint"')
     expect(html).toContain('aria-describedby="a-hint"')
   })

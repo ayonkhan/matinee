@@ -5,15 +5,15 @@ const render = (node: unknown) => String(node)
 
 describe('Cover', () => {
   it('shows the image with descriptive alt text', () => {
-    const html = render(<Cover title="Heat" src="https://example.com/heat.jpg" />)
+    const html = render(<Cover title="Night Train" src="https://example.com/night-train.jpg" />)
 
     expect(html).toContain('<img')
-    expect(html).toContain('src="https://example.com/heat.jpg"')
-    expect(html).toContain('alt="Cover of Heat"')
+    expect(html).toContain('src="https://example.com/night-train.jpg"')
+    expect(html).toContain('alt="Cover of Night Train"')
   })
 
   it('loads lazily and reserves its size', () => {
-    const html = render(<Cover title="Heat" src="https://example.com/heat.jpg" />)
+    const html = render(<Cover title="Night Train" src="https://example.com/night-train.jpg" />)
 
     expect(html).toContain('loading="lazy"')
     expect(html).toContain('width="200"')
@@ -21,20 +21,20 @@ describe('Cover', () => {
   })
 
   it('keeps a 2:3 shape', () => {
-    expect(render(<Cover title="Heat" src="x.jpg" />)).toContain('aspect-[2/3]')
+    expect(render(<Cover title="Night Train" src="x.jpg" />)).toContain('aspect-[2/3]')
   })
 
   it('shows a placeholder with the title when there is no cover', () => {
-    const html = render(<Cover title="Heat" />)
+    const html = render(<Cover title="Night Train" />)
 
     expect(html).not.toContain('<img')
     expect(html).toContain('role="img"')
-    expect(html).toContain('aria-label="No cover available for Heat"')
-    expect(html).toContain('>Heat<')
+    expect(html).toContain('aria-label="No cover available for Night Train"')
+    expect(html).toContain('>Night Train<')
   })
 
   it('treats an empty src as no cover', () => {
-    expect(render(<Cover title="Heat" src="" />)).not.toContain('<img')
+    expect(render(<Cover title="Night Train" src="" />)).not.toContain('<img')
   })
 
   it('changes width with size', () => {

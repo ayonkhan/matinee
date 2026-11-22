@@ -22,9 +22,9 @@ describe('ActionBar', () => {
   it('shows a cancel link only when given one', () => {
     expect(render(<ActionBar />)).not.toContain('Cancel')
 
-    const html = render(<ActionBar cancelHref="/films" />)
+    const html = render(<ActionBar cancelHref="/items" />)
 
-    expect(html).toContain('href="/films"')
+    expect(html).toContain('href="/items"')
     expect(html).toContain('Cancel')
   })
 

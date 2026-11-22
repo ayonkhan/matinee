@@ -3,14 +3,14 @@ import { CodeBlock, copyScript, highlight } from '../docs/code-block'
 
 const render = (node: unknown) => String(node)
 
-const code = '<Button href="/films/new" fullWidth>\n  Add film\n</Button>'
+const code = '<Button href="/items/new" fullWidth>\n  Add item\n</Button>'
 
 describe('CodeBlock', () => {
   it('shows the code in a pre element', () => {
     const html = render(<CodeBlock code={code} />)
 
     expect(html).toContain('<pre')
-    expect(html).toContain('Add film')
+    expect(html).toContain('Add item')
   })
 
   it('writes the angle brackets as text, not as markup', () => {

@@ -24,9 +24,9 @@ describe('Checkbox', () => {
   })
 
   it('sends a name and value with the form', () => {
-    const html = render(<Checkbox id="a" label="A" name="films" value="42" />)
+    const html = render(<Checkbox id="a" label="A" name="topics" value="42" />)
 
-    expect(html).toContain('name="films"')
+    expect(html).toContain('name="topics"')
     expect(html).toContain('value="42"')
   })
 

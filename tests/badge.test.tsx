@@ -5,18 +5,18 @@ const render = (node: unknown) => String(node)
 
 describe('Badge', () => {
   it('renders its text in a span by default', () => {
-    const html = render(<Badge>Drama</Badge>)
+    const html = render(<Badge>Design</Badge>)
 
     expect(html).toContain('<span')
-    expect(html).toContain('Drama')
+    expect(html).toContain('Design')
     expect(html).not.toContain('<a')
   })
 
   it('renders a link when it has an href', () => {
-    const html = render(<Badge href="/films?type=movie">Movies</Badge>)
+    const html = render(<Badge href="/items?type=article">Articles</Badge>)
 
     expect(html).toContain('<a')
-    expect(html).toContain('href="/films?type=movie"')
+    expect(html).toContain('href="/items?type=article"')
   })
 
   it('uses the neutral tone by default', () => {

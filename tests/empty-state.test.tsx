@@ -12,10 +12,10 @@ describe('EmptyState', () => {
   })
 
   it('shows a message under the title', () => {
-    const html = render(<EmptyState title="Empty">Films you add will show up here.</EmptyState>)
+    const html = render(<EmptyState title="Empty">Items you save will show up here.</EmptyState>)
 
-    expect(html).toContain('Films you add will show up here.')
-    expect(html.indexOf('Empty')).toBeLessThan(html.indexOf('Films you add'))
+    expect(html).toContain('Items you save will show up here.')
+    expect(html.indexOf('Empty')).toBeLessThan(html.indexOf('Items you save'))
   })
 
   it('has no message area without a message', () => {
@@ -23,9 +23,9 @@ describe('EmptyState', () => {
   })
 
   it('shows an icon and hides it from screen readers', () => {
-    const html = render(<EmptyState title="Empty" icon={<svg data-icon="film" />} />)
+    const html = render(<EmptyState title="Empty" icon={<svg data-icon="bookmark" />} />)
 
-    expect(html).toContain('data-icon="film"')
+    expect(html).toContain('data-icon="bookmark"')
     expect(html).toContain('aria-hidden="true"')
   })
 
@@ -37,10 +37,10 @@ describe('EmptyState', () => {
   })
 
   it('offers one next step as a link button', () => {
-    const html = render(<EmptyState title="Empty" action={{ label: 'Add a film', href: '/films/new' }} />)
+    const html = render(<EmptyState title="Empty" action={{ label: 'Add an item', href: '/items/new' }} />)
 
-    expect(html).toContain('href="/films/new"')
-    expect(html).toContain('Add a film')
+    expect(html).toContain('href="/items/new"')
+    expect(html).toContain('Add an item')
     expect(html).toContain('bg-accent')
   })
 
