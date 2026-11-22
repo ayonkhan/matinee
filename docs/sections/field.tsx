@@ -33,7 +33,7 @@ export function FieldSection() {
         label="Bio"
         multiline
         rows={3}
-        value="Night owl. I watch too many films and rate them harshly."
+        value="Night owl. I collect far too many things."
         hint="Shown on your profile. Up to 200 characters."
       />
       <CodeBlock

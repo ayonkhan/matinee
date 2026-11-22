@@ -48,8 +48,8 @@ export function SegmentedControlSection() {
         label="Type"
         options={[
           { label: 'All', href: '#' },
-          { label: 'Movies', href: '#', selected: true },
-          { label: 'TV', href: '#' },
+          { label: 'Articles', href: '#', selected: true },
+          { label: 'Videos', href: '#' },
         ]}
       />
       <div class="flex max-w-sm flex-col gap-1">
@@ -57,8 +57,8 @@ export function SegmentedControlSection() {
           label="Show"
           fullWidth
           options={[
-            { label: 'Seen', href: '#', selected: true },
-            { label: 'Watchlist', href: '#' },
+            { label: 'Open', href: '#', selected: true },
+            { label: 'Saved', href: '#' },
           ]}
         />
         <p class="type-hint">Each option is a link, so it works without JavaScript.</p>

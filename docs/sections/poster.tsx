@@ -18,7 +18,7 @@ export function PosterSection() {
         <Poster title="Small" src={artGold} size="sm" />
         <Poster title="Medium" src={artBlue} size="md" />
         <Poster title="Large" src={artRose} size="lg" />
-        <Poster title="A film with no poster found" size="lg" />
+        <Poster title="An item with no poster found" size="lg" />
       </div>
       <div class="grid max-w-md grid-cols-4 gap-3">
         <Poster title="One" src={artGold} size="fill" />

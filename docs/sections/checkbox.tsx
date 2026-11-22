@@ -12,15 +12,15 @@ export function CheckboxSection() {
           <Checkbox id="locked" label="Not available" disabled />
         </div>
         <CheckboxGroup
-          id="genres"
-          legend="Favourite genres"
-          name="genre"
+          id="topics"
+          legend="Favourite topics"
+          name="topic"
           hint="Pick any you like."
           options={[
-            { value: 'drama', label: 'Drama', checked: true },
-            { value: 'comedy', label: 'Comedy' },
-            { value: 'thriller', label: 'Thriller', hint: 'Edge of your seat.' },
-            { value: 'horror', label: 'Horror', disabled: true },
+            { value: 'design', label: 'Design', checked: true },
+            { value: 'travel', label: 'Travel' },
+            { value: 'cooking', label: 'Cooking', hint: 'New every week.' },
+            { value: 'music', label: 'Music', disabled: true },
           ]}
         />
       </div>
@@ -32,12 +32,12 @@ export function CheckboxSection() {
       <CodeBlock
         title="A group"
         code={`<CheckboxGroup
-  id="genres"
-  legend="Favourite genres"
-  name="genre"
+  id="topics"
+  legend="Favourite topics"
+  name="topic"
   options={[
-    { value: 'drama', label: 'Drama', checked: true },
-    { value: 'comedy', label: 'Comedy' },
+    { value: 'design', label: 'Design', checked: true },
+    { value: 'travel', label: 'Travel' },
   ]}
 />`}
       />

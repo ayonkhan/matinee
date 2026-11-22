@@ -17,7 +17,7 @@ export function ButtonSection() {
       <CodeBlock title="Basic use" code={'<Button type="submit">Save</Button>'} />
       <CodeBlock
         title="As a link, full width"
-        code={'<Button href="/films/new" fullWidth>\n  Add film\n</Button>'}
+        code={'<Button href="/items/new" fullWidth>\n  Add item\n</Button>'}
       />
     </>
   )

@@ -2,9 +2,9 @@ import { CodeBlock } from '../code-block'
 
 // Full class names are written out so Tailwind can find them.
 const typeStyles = [
-  { name: 'type-display', cls: 'type-display', sample: 'Your films, rated' },
+  { name: 'type-display', cls: 'type-display', sample: 'Your list, rated' },
   { name: 'type-heading', cls: 'type-heading', sample: 'Recently added' },
-  { name: 'type-body', cls: 'type-body', sample: 'Quiet and devastating. The last shot stays with you.' },
+  { name: 'type-body', cls: 'type-body', sample: 'A calm, clear page that is easy to read.' },
   { name: 'type-label', cls: 'type-label', sample: 'Rating' },
   { name: 'type-hint', cls: 'type-hint', sample: 'Up to 200 characters.' },
   { name: 'type-overline', cls: 'type-overline', sample: 'Live preview' },
@@ -24,7 +24,7 @@ export function TypographySection() {
       </div>
       <CodeBlock
         title="One class per piece of text"
-        code={`<h1 class="type-display">Your films, rated</h1>
+        code={`<h1 class="type-display">Your list, rated</h1>
 <p class="type-hint">Up to 200 characters.</p>`}
       />
     </>
