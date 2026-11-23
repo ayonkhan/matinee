@@ -8,6 +8,7 @@ import { CardSection } from './card'
 import { CheckboxSection } from './checkbox'
 import { CodeInputSection } from './code-input'
 import { ColoursSection } from './colours'
+import { CopyBlockSection } from './copy-block'
 import { CoverSection } from './cover'
 import { DisclosureSection } from './disclosure'
 import { EmptyStateSection } from './empty-state'
@@ -63,6 +64,7 @@ export const groups: SectionGroup[] = [
       { id: 'avatar', title: 'Avatar', Component: AvatarSection, category: 'Display' },
       { id: 'badge', title: 'Badge', Component: BadgeSection, category: 'Display' },
       { id: 'card', title: 'Card', Component: CardSection, category: 'Display' },
+      { id: 'copy-block', title: 'CopyBlock', Component: CopyBlockSection, category: 'Display' },
       { id: 'cover', title: 'Cover', Component: CoverSection, category: 'Display' },
       { id: 'disclosure', title: 'Disclosure', Component: DisclosureSection, category: 'Display' },
       { id: 'empty-state', title: 'EmptyState', Component: EmptyStateSection, category: 'Display' },

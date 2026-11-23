@@ -107,8 +107,8 @@ export function Welcome() {
 | Group | Components |
 | --- | --- |
 | Actions | ActionBar, Button |
-| Display | Avatar, Badge, Card, Cover, Disclosure, EmptyState, Notice, Stars, Stat |
-| Forms | Checkbox, CheckboxGroup, CodeInput, Field, Fieldset, FileInput, RadioGroup, Select, Slider, Toggle |
+| Display | Avatar, Badge, Card, CopyBlock, Cover, Disclosure, EmptyState, Notice, Stars, Stat |
+| Forms | Checkbox, CodeInput, Field, Fieldset, FileInput, RadioGroup, Select, Slider, Toggle |
 | Navigation | BottomNav, SegmentedControl, TopBar |
 
 The theme also has tokens for colours, type and radii. The [docs](https://matinee.ayonkhan.ca/) show each one.
