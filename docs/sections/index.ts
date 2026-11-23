@@ -18,6 +18,7 @@ import { FileInputSection } from './file-input'
 import { FooterSection } from './footer'
 import { GettingStartedSection } from './getting-started'
 import { NoticeSection } from './notice'
+import { PaginationSection } from './pagination'
 import { RadioGroupSection } from './radio-group'
 import { SegmentedControlSection } from './segmented-control'
 import { SelectSection } from './select'
@@ -83,6 +84,7 @@ export const groups: SectionGroup[] = [
       { id: 'toggle', title: 'Toggle', Component: ToggleSection, category: 'Forms' },
       { id: 'bottom-nav', title: 'BottomNav', Component: BottomNavSection, category: 'Navigation' },
       { id: 'footer', title: 'Footer', Component: FooterSection, category: 'Navigation' },
+      { id: 'pagination', title: 'Pagination', Component: PaginationSection, category: 'Navigation' },
       { id: 'segmented-control', title: 'SegmentedControl', Component: SegmentedControlSection, category: 'Navigation' },
       { id: 'top-bar', title: 'TopBar', Component: TopBarSection, category: 'Navigation' },
     ],
