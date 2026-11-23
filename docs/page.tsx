@@ -12,7 +12,7 @@ const fonts =
 function Brand() {
   return (
     <div>
-      <h1 class="font-display text-3xl font-bold">Matinee</h1>
+      <p class="font-display text-3xl font-bold">Matinee</p>
       <p class="mt-1 text-sm text-muted">
         A mobile-first design system with Tailwind v4 tokens and JSX components. Built with Hono.
       </p>
@@ -131,7 +131,7 @@ export function Page() {
             <div class="min-w-0 flex-1">
               <header class="sticky top-0 z-30 flex flex-col gap-3 border-b border-line bg-page px-4 py-3 lg:hidden">
                 <div class="flex items-center justify-between gap-4">
-                  <h1 class="font-display text-xl font-bold">Matinee</h1>
+                  <p class="font-display text-xl font-bold">Matinee</p>
                   <ThemeSwitch />
                 </div>
                 <details class="group">
@@ -145,14 +145,17 @@ export function Page() {
                 </details>
               </header>
 
-              <main class="mx-auto flex max-w-3xl flex-col gap-12 px-4 py-10 lg:px-10 lg:py-12">
-                {groups.flatMap((group) =>
-                  group.sections.map((section) => (
-                    <Section id={section.id} title={section.title}>
-                      <section.Component />
-                    </Section>
-                  )),
-                )}
+              <main class="mx-auto max-w-3xl px-4 py-10 lg:px-10 lg:py-12">
+                <article class="flex flex-col gap-12">
+                  <h1 class="sr-only">Matinee docs</h1>
+                  {groups.flatMap((group) =>
+                    group.sections.map((section) => (
+                      <Section id={section.id} title={section.title}>
+                        <section.Component />
+                      </Section>
+                    )),
+                  )}
+                </article>
               </main>
 
               <SiteFooter class="border-t border-line px-4 py-6 lg:hidden" />
