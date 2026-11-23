@@ -15,6 +15,7 @@ import { EmptyStateSection } from './empty-state'
 import { FieldSection } from './field'
 import { FieldsetSection } from './fieldset'
 import { FileInputSection } from './file-input'
+import { FooterSection } from './footer'
 import { GettingStartedSection } from './getting-started'
 import { NoticeSection } from './notice'
 import { RadioGroupSection } from './radio-group'
@@ -81,6 +82,7 @@ export const groups: SectionGroup[] = [
       { id: 'slider', title: 'Slider', Component: SliderSection, category: 'Forms' },
       { id: 'toggle', title: 'Toggle', Component: ToggleSection, category: 'Forms' },
       { id: 'bottom-nav', title: 'BottomNav', Component: BottomNavSection, category: 'Navigation' },
+      { id: 'footer', title: 'Footer', Component: FooterSection, category: 'Navigation' },
       { id: 'segmented-control', title: 'SegmentedControl', Component: SegmentedControlSection, category: 'Navigation' },
       { id: 'top-bar', title: 'TopBar', Component: TopBarSection, category: 'Navigation' },
     ],
