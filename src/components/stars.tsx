@@ -15,11 +15,18 @@ const sizes: Record<StarsSize, string> = {
   lg: 'size-6',
 }
 
+// The same sizes in pixels, so a star keeps its size even where the styles do not load.
+const pixels: Record<StarsSize, number> = {
+  sm: 16,
+  md: 20,
+  lg: 24,
+}
+
 const path = 'M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z'
 
-function Star(props: { size: string }) {
+function Star(props: { size: string; pixels: number }) {
   return (
-    <svg viewBox="0 0 24 24" aria-hidden="true" class={`${props.size} shrink-0 fill-current`}>
+    <svg viewBox="0 0 24 24" width={props.pixels} height={props.pixels} aria-hidden="true" class={`${props.size} shrink-0 fill-current`}>
       <path d={path} />
     </svg>
   )
@@ -44,10 +51,10 @@ export function Stars(props: StarsProps) {
         {stars.map((percent) => (
           <span class="relative inline-block" data-fill={percent}>
             <span class="text-line-strong">
-              <Star size={sizes[size]} />
+              <Star size={sizes[size]} pixels={pixels[size]} />
             </span>
             <span class="absolute inset-y-0 left-0 overflow-hidden text-accent" style={`width:${percent}%`}>
-              <Star size={sizes[size]} />
+              <Star size={sizes[size]} pixels={pixels[size]} />
             </span>
           </span>
         ))}

@@ -88,6 +88,8 @@ export function Select(props: SelectProps) {
         </select>
         <svg
           viewBox="0 0 24 24"
+          width="20"
+          height="20"
           fill="none"
           stroke="currentColor"
           stroke-width="2"

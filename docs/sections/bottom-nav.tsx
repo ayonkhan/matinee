@@ -4,7 +4,7 @@ import { CodeBlock } from '../code-block'
 
 function Icon(props: PropsWithChildren) {
   return (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="size-6">
+    <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="size-6">
       {props.children}
     </svg>
   )
@@ -26,8 +26,10 @@ const navItems = [
     href: '#',
     icon: (
       <Icon>
-        <rect x="3" y="4" width="18" height="16" rx="2" />
-        <path d="M7 4v16M17 4v16M3 9h4M3 15h4M17 9h4M17 15h4" />
+        <rect x="4" y="4" width="7" height="7" rx="1" />
+        <rect x="13" y="4" width="7" height="7" rx="1" />
+        <rect x="4" y="13" width="7" height="7" rx="1" />
+        <rect x="13" y="13" width="7" height="7" rx="1" />
       </Icon>
     ),
   },

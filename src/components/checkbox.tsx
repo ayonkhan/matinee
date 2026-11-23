@@ -36,7 +36,7 @@ export function Checkbox(props: CheckboxProps) {
           class="peer sr-only"
         />
         <span aria-hidden="true" class={`${box} ${error ? 'border-danger-line' : 'border-line-strong'}`}>
-          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="size-3.5">
+          <svg viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="size-3.5">
             <path d="M3 8.5l3.2 3.2L13 4.8" />
           </svg>
         </span>
