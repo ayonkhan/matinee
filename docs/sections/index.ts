@@ -20,6 +20,7 @@ import { GettingStartedSection } from './getting-started'
 import { ListSection } from './list'
 import { NoticeSection } from './notice'
 import { PaginationSection } from './pagination'
+import { ProseSection } from './prose'
 import { RadioGroupSection } from './radio-group'
 import { RatingInputSection } from './rating-input'
 import { SegmentedControlSection } from './segmented-control'
@@ -74,6 +75,7 @@ export const groups: SectionGroup[] = [
       { id: 'empty-state', title: 'EmptyState', Component: EmptyStateSection, category: 'Display' },
       { id: 'list', title: 'List', Component: ListSection, category: 'Display' },
       { id: 'notice', title: 'Notice', Component: NoticeSection, category: 'Display' },
+      { id: 'prose', title: 'Prose', Component: ProseSection, category: 'Display' },
       { id: 'stars', title: 'Stars', Component: StarsSection, category: 'Display' },
       { id: 'stat', title: 'Stat', Component: StatSection, category: 'Display' },
       { id: 'checkbox', title: 'Checkbox', Component: CheckboxSection, category: 'Forms' },
