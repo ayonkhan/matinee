@@ -9,10 +9,7 @@ A mobile-first design system for [Hono](https://hono.dev/), with [Tailwind](http
 You can see every component, with code to copy, in the [docs](https://matinee.ayonkhan.ca/).
 
 <p>
-    <picture>
-        <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/ayonkhan/matinee/main/.github/assets/dark.png">
-        <img src="https://raw.githubusercontent.com/ayonkhan/matinee/main/.github/assets/light.png" alt="The Matinee docs, showing the Field component with its inputs, hints and an error message" width="768">
-    </picture>
+    <img src="https://raw.githubusercontent.com/ayonkhan/matinee/main/.github/assets/preview.png" alt="Matinee components in light and dark, side by side, showing BottomNav and Button" width="768">
 </p>
 
 ## Contents
