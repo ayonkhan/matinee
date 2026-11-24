@@ -137,3 +137,17 @@
   font-size: 0.8125rem;
   line-height: 1.65;
 }
+
+/*
+  A star in a rating input. It is gold when it, or a star after it in the markup, is chosen or hovered.
+  The row is flipped on screen, so those are the stars on its left.
+*/
+@utility rating-star {
+  color: var(--color-line-strong);
+
+  input:checked ~ &,
+  label:hover ~ &,
+  &:hover {
+    color: var(--color-accent);
+  }
+}

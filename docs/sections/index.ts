@@ -21,6 +21,7 @@ import { ListSection } from './list'
 import { NoticeSection } from './notice'
 import { PaginationSection } from './pagination'
 import { RadioGroupSection } from './radio-group'
+import { RatingInputSection } from './rating-input'
 import { SegmentedControlSection } from './segmented-control'
 import { SelectSection } from './select'
 import { SliderSection } from './slider'
@@ -81,6 +82,7 @@ export const groups: SectionGroup[] = [
       { id: 'fieldset', title: 'Fieldset', Component: FieldsetSection, category: 'Forms' },
       { id: 'file-input', title: 'FileInput', Component: FileInputSection, category: 'Forms' },
       { id: 'radio-group', title: 'RadioGroup', Component: RadioGroupSection, category: 'Forms' },
+      { id: 'rating-input', title: 'RatingInput', Component: RatingInputSection, category: 'Forms' },
       { id: 'select', title: 'Select', Component: SelectSection, category: 'Forms' },
       { id: 'slider', title: 'Slider', Component: SliderSection, category: 'Forms' },
       { id: 'toggle', title: 'Toggle', Component: ToggleSection, category: 'Forms' },
