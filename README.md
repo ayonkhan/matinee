@@ -107,7 +107,7 @@ export function Welcome() {
 | Group | Components |
 | --- | --- |
 | Actions | ActionBar, Button |
-| Display | Avatar, Badge, Card, CopyBlock, Cover, Disclosure, EmptyState, Notice, Stars, Stat |
+| Display | Avatar, Badge, Card, CopyBlock, Cover, Disclosure, EmptyState, List, ListItem, Notice, Stars, Stat |
 | Forms | Checkbox, CodeInput, Field, Fieldset, FileInput, RadioGroup, Select, Slider, Toggle |
 | Navigation | BottomNav, Footer, Pagination, SegmentedControl, TopBar |
 

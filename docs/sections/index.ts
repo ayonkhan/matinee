@@ -17,6 +17,7 @@ import { FieldsetSection } from './fieldset'
 import { FileInputSection } from './file-input'
 import { FooterSection } from './footer'
 import { GettingStartedSection } from './getting-started'
+import { ListSection } from './list'
 import { NoticeSection } from './notice'
 import { PaginationSection } from './pagination'
 import { RadioGroupSection } from './radio-group'
@@ -70,6 +71,7 @@ export const groups: SectionGroup[] = [
       { id: 'cover', title: 'Cover', Component: CoverSection, category: 'Display' },
       { id: 'disclosure', title: 'Disclosure', Component: DisclosureSection, category: 'Display' },
       { id: 'empty-state', title: 'EmptyState', Component: EmptyStateSection, category: 'Display' },
+      { id: 'list', title: 'List', Component: ListSection, category: 'Display' },
       { id: 'notice', title: 'Notice', Component: NoticeSection, category: 'Display' },
       { id: 'stars', title: 'Stars', Component: StarsSection, category: 'Display' },
       { id: 'stat', title: 'Stat', Component: StatSection, category: 'Display' },
