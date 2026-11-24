@@ -19,6 +19,7 @@ import { FooterSection } from './footer'
 import { GettingStartedSection } from './getting-started'
 import { ListSection } from './list'
 import { NoticeSection } from './notice'
+import { PageHeaderSection } from './page-header'
 import { PaginationSection } from './pagination'
 import { ProseSection } from './prose'
 import { RadioGroupSection } from './radio-group'
@@ -75,6 +76,7 @@ export const groups: SectionGroup[] = [
       { id: 'empty-state', title: 'EmptyState', Component: EmptyStateSection, category: 'Display' },
       { id: 'list', title: 'List', Component: ListSection, category: 'Display' },
       { id: 'notice', title: 'Notice', Component: NoticeSection, category: 'Display' },
+      { id: 'page-header', title: 'PageHeader', Component: PageHeaderSection, category: 'Display' },
       { id: 'prose', title: 'Prose', Component: ProseSection, category: 'Display' },
       { id: 'stars', title: 'Stars', Component: StarsSection, category: 'Display' },
       { id: 'stat', title: 'Stat', Component: StatSection, category: 'Display' },
