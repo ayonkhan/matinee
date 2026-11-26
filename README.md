@@ -4,7 +4,7 @@
 [![License](https://img.shields.io/github/license/ayonkhan/matinee)](LICENSE)
 [![Release](https://img.shields.io/github/v/release/ayonkhan/matinee)](https://github.com/ayonkhan/matinee/releases)
 
-A mobile-first design system for [Hono](https://hono.dev/), with [Tailwind](https://tailwindcss.com/) v4 tokens and JSX components for buttons, forms, cards and navigation, in light and dark. I built it for my own projects, and you can use it too.
+A mobile-first design system for [Hono](https://hono.dev/), with [Tailwind](https://tailwindcss.com/) v4 tokens and JSX components for buttons, forms, cards and navigation, in light and dark.
 
 You can see every component, with code to copy, in the [docs](https://matinee.ayonkhan.ca/).
 
@@ -28,12 +28,11 @@ You can see every component, with code to copy, in the [docs](https://matinee.ay
 
 - **Mobile-first:** every component is built for small screens first.
 - **Light and dark:** one theme with a dark version, switched with a `data-theme` attribute.
-- **Server rendered:** the components are plain Hono JSX that render to HTML, and they need no JavaScript.
+- **Server rendered:** the components are plain Hono JSX that render to HTML. They need no JavaScript, except the Copy button in CopyBlock, which uses one small script.
 - **Tailwind v4 tokens:** colours, type and radii are theme tokens, so you use them as classes, such as `bg-page` and `text-ink`.
 - **Typed:** written in TypeScript, with the types included.
 - **Accessible:** focus rings, labels and ARIA attributes, covered by tests.
 - **Tested:** every component has tests.
-- **Free:** MIT licensed.
 
 ## Requirements
 
@@ -48,6 +47,8 @@ You can see every component, with code to copy, in the [docs](https://matinee.ay
 ```bash
 pnpm add @ayonkhan/matinee
 ```
+
+Use `npm install` or `yarn add` if you prefer them. The package works the same with any of them.
 
 Hono and Tailwind are peer dependencies. If your project doesn't have them yet, add them too:
 
@@ -119,6 +120,8 @@ The theme also has tokens for colours, type and radii. The [docs](https://matine
 **The fonts look wrong.** Check that the font links from [step 3](#3-load-the-fonts) are in the head of your page.
 
 **Dark mode doesn't apply.** Check that `data-theme="dark"` is on the `html` element, and not on the body or a wrapper.
+
+**The Copy button doesn't show.** The button needs a small script. Add `copyScript` to your page once, as the [CopyBlock docs](https://matinee.ayonkhan.ca/#copy-block) show.
 
 ## Tests
 
