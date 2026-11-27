@@ -67,4 +67,26 @@ describe('Button', () => {
     expect(html).not.toContain('cursor-pointer')
     expect(html).not.toContain('hover:')
   })
+
+  it('can look like a link and still be a button', () => {
+    const html = render(<Button variant="link" type="submit">Send a new code</Button>)
+
+    expect(html).toContain('<button')
+    expect(html).toContain('type="submit"')
+    expect(html).toContain('text-accent-text')
+    expect(html).toContain('hover:underline')
+    expect(html).not.toContain('bg-accent')
+    expect(html).not.toContain('px-5')
+  })
+
+  it('keeps a link-style button at least 44px tall, so it is easy to tap', () => {
+    expect(render(<Button variant="link">Send a new code</Button>)).toContain('min-h-11')
+  })
+
+  it('shows no hover feedback on a disabled link-style button', () => {
+    const html = render(<Button variant="link" disabled>Send a new code</Button>)
+
+    expect(html).toContain('cursor-not-allowed')
+    expect(html).not.toContain('hover:')
+  })
 })
