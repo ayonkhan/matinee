@@ -1,5 +1,6 @@
 import type { PropsWithChildren } from 'hono/jsx'
 import type { Placement } from './dock'
+import { type ContentWidth, widths } from './width'
 
 export type BannerEdge = 'bottom' | 'top'
 
@@ -16,6 +17,8 @@ export type BannerProps = PropsWithChildren<{
   edge?: BannerEdge
   // Remember a dismissal in the browser. Turn it off for a banner that should come back on every visit.
   remember?: boolean
+  // narrow is the default. Use wide when the page itself is wider.
+  width?: ContentWidth
   class?: string
 }>
 
@@ -55,6 +58,7 @@ export function Banner(props: BannerProps) {
     placement = 'fixed',
     edge = 'bottom',
     remember = true,
+    width = 'narrow',
     children,
   } = props
 
@@ -67,7 +71,7 @@ export function Banner(props: BannerProps) {
       aria-label={label}
       class={[placement === 'fixed' ? edges[edge] : inline, props.class ?? ''].filter(Boolean).join(' ')}
     >
-      <div class="mx-auto flex max-w-5xl flex-wrap items-center gap-x-6 gap-y-3 px-4 py-4">
+      <div class={`mx-auto flex ${widths[width]} flex-wrap items-center gap-x-6 gap-y-3 px-4 py-4`}>
         <div class="min-w-60 flex-1 font-sans text-sm leading-relaxed text-muted">{children}</div>
 
         <button

@@ -35,6 +35,10 @@ import { bannerScript } from '@ayonkhan/matinee'
 </Banner>`}
       />
       <CodeBlock
+        title="For a wider page"
+        code={`<Banner id="cookies" width="wide">We only use the cookies needed to keep you signed in.</Banner>`}
+      />
+      <CodeBlock
         title="Own button text, and it returns on every visit"
         code={`<Banner id="beta" action="Close" remember={false}>
   This is a beta. Things may change.

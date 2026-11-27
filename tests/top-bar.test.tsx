@@ -102,4 +102,10 @@ describe('TopBar', () => {
 
     expect(html).not.toContain('<script>')
   })
+
+  it('is as wide as the narrow page by default and can match a wider one', () => {
+    expect(render(<TopBar brand={brand} />)).toContain('max-w-5xl')
+    expect(render(<TopBar brand={brand} width="wide" />)).toContain('max-w-6xl')
+    expect(render(<TopBar brand={brand} width="wide" />)).not.toContain('max-w-5xl')
+  })
 })

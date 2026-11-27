@@ -1,5 +1,6 @@
 import { Avatar } from './avatar'
 import { Button } from './button'
+import { type ContentWidth, widths } from './width'
 
 export type TopBarLink = {
   label: string
@@ -24,6 +25,8 @@ export type TopBarProps = {
     menu: TopBarMenuItem[]
     open?: boolean
   }
+  // narrow is the default. Use wide when the page itself is wider.
+  width?: ContentWidth
   class?: string
 }
 
@@ -32,11 +35,11 @@ const focus = 'focus-visible:outline-2 focus-visible:outline-offset-2 focus-visi
 const menuItem = `block w-full cursor-pointer rounded-control px-3 py-2 text-left font-sans text-sm text-ink no-underline hover:bg-raised ${focus}`
 
 export function TopBar(props: TopBarProps) {
-  const { brand, links = [], action, user } = props
+  const { brand, links = [], action, user, width = 'narrow' } = props
 
   return (
     <header class={['border-b border-line bg-card', props.class ?? ''].filter(Boolean).join(' ')}>
-      <div class="mx-auto flex h-14 max-w-5xl items-center gap-6 px-4">
+      <div class={`mx-auto flex h-14 ${widths[width]} items-center gap-6 px-4`}>
         <a href={brand.href} class={`font-display text-lg font-bold text-ink no-underline ${focus}`}>
           {brand.name}
         </a>

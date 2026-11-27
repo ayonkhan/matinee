@@ -46,6 +46,10 @@ export function TopBarSection() {
   user={{ name: 'swift-raven-5065', menu: [{ label: 'Settings', href: '/settings' }] }}
 />`}
       />
+      <CodeBlock
+        title="For a wider page"
+        code={`<TopBar brand={{ name: 'Matinee', href: '/' }} width="wide" />`}
+      />
     </>
   )
 }

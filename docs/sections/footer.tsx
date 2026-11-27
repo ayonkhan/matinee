@@ -34,6 +34,10 @@ export function FooterSection() {
         title="Links only"
         code={`<Footer links={[{ label: 'About', href: '/about' }]} />`}
       />
+      <CodeBlock
+        title="For a wider page"
+        code={`<Footer width="wide" links={[{ label: 'About', href: '/about' }]} />`}
+      />
     </>
   )
 }

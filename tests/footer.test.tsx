@@ -59,4 +59,10 @@ describe('Footer', () => {
     expect(html).not.toContain('<script>')
     expect(html).not.toContain('<b>x</b>')
   })
+
+  it('is as wide as the narrow page by default and can match a wider one', () => {
+    expect(render(<Footer>Note</Footer>)).toContain('max-w-5xl')
+    expect(render(<Footer width="wide">Note</Footer>)).toContain('max-w-6xl')
+    expect(render(<Footer width="wide">Note</Footer>)).not.toContain('max-w-5xl')
+  })
 })

@@ -88,3 +88,11 @@ describe('bannerScript', () => {
     expect(bannerScript).not.toContain('<')
   })
 })
+
+describe('Banner width', () => {
+  it('is as wide as the narrow page by default and can match a wider one', () => {
+    expect(render(<Banner id="cookies">x</Banner>)).toContain('max-w-5xl')
+    expect(render(<Banner id="cookies" width="wide">x</Banner>)).toContain('max-w-6xl')
+    expect(render(<Banner id="cookies" width="wide">x</Banner>)).not.toContain('max-w-5xl')
+  })
+})
