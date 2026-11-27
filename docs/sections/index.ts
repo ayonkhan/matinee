@@ -25,6 +25,7 @@ import { PaginationSection } from './pagination'
 import { ProseSection } from './prose'
 import { RadioGroupSection } from './radio-group'
 import { RatingInputSection } from './rating-input'
+import { SectionNavSection } from './section-nav'
 import { SegmentedControlSection } from './segmented-control'
 import { SelectSection } from './select'
 import { SliderSection } from './slider'
@@ -95,6 +96,7 @@ export const groups: SectionGroup[] = [
       { id: 'bottom-nav', title: 'BottomNav', Component: BottomNavSection, category: 'Navigation' },
       { id: 'footer', title: 'Footer', Component: FooterSection, category: 'Navigation' },
       { id: 'pagination', title: 'Pagination', Component: PaginationSection, category: 'Navigation' },
+      { id: 'section-nav', title: 'SectionNav', Component: SectionNavSection, category: 'Navigation' },
       { id: 'segmented-control', title: 'SegmentedControl', Component: SegmentedControlSection, category: 'Navigation' },
       { id: 'top-bar', title: 'TopBar', Component: TopBarSection, category: 'Navigation' },
     ],
