@@ -10,6 +10,8 @@ export type CodeInputProps = {
   error?: string
   required?: boolean
   disabled?: boolean
+  // Puts the cursor in the field when the page loads. Use it on one field per page.
+  autofocus?: boolean
   class?: string
 }
 
@@ -41,6 +43,7 @@ export function CodeInput(props: CodeInputProps) {
         inputmode="numeric"
         autocomplete="one-time-code"
         pattern="[0-9]*"
+        autofocus={props.autofocus}
         required={props.required}
         disabled={disabled}
         aria-invalid={error ? 'true' : undefined}

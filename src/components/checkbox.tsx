@@ -1,8 +1,10 @@
+import type { Child } from 'hono/jsx'
 import { describedBy, FieldMessage } from './form-parts'
 
 export type CheckboxProps = {
   id: string
-  label: string
+  // Text, or markup with links in it, such as "I agree to the Terms".
+  label: Child
   name?: string
   value?: string
   checked?: boolean

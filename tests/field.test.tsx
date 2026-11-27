@@ -88,4 +88,47 @@ describe('Field', () => {
     expect(html).toContain('max="10"')
     expect(html).toContain('step="0.5"')
   })
+
+  it('passes the text attributes to the input', () => {
+    const html = render(
+      <Field
+        id="u"
+        label="Username"
+        minlength={3}
+        pattern="[a-z]+"
+        autocomplete="username"
+        inputmode="text"
+        autocapitalize="none"
+        spellcheck={false}
+        autofocus
+      />,
+    )
+
+    expect(html).toContain('minlength="3"')
+    expect(html).toContain('pattern="[a-z]+"')
+    expect(html).toContain('autocomplete="username"')
+    expect(html).toContain('inputmode="text"')
+    expect(html).toContain('autocapitalize="none"')
+    expect(html).toContain('spellcheck="false"')
+    expect(html).toMatch(/\sautofocus(=""|\s|>)/)
+  })
+
+  it('leaves the text attributes out unless they are given', () => {
+    const html = render(<Field id="u" label="Username" />)
+
+    const attributes = ['minlength', 'pattern', 'autocomplete', 'inputmode', 'autocapitalize', 'spellcheck', 'autofocus']
+
+    for (const attribute of attributes) {
+      expect(html).not.toContain(attribute)
+    }
+  })
+
+  it('passes the text attributes to a multiline field too, except the keyboard and pattern', () => {
+    const html = render(<Field id="b" label="Bio" multiline minlength={5} autocomplete="off" spellcheck={false} />)
+
+    expect(html).toContain('<textarea')
+    expect(html).toContain('minlength="5"')
+    expect(html).toContain('autocomplete="off"')
+    expect(html).toContain('spellcheck="false"')
+  })
 })

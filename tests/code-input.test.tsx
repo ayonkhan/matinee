@@ -83,4 +83,9 @@ describe('CodeInput', () => {
 
     expect(html).not.toContain('<script>')
   })
+
+  it('can put the cursor in the field', () => {
+    expect(has(render(<CodeInput id="a" label="Code" autofocus />), 'autofocus')).toBe(true)
+    expect(has(render(<CodeInput id="a" label="Code" />), 'autofocus')).toBe(false)
+  })
 })

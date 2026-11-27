@@ -72,4 +72,19 @@ describe('Checkbox', () => {
   it('escapes the label', () => {
     expect(render(<Checkbox id="a" label={'<script>alert(1)</script>'} />)).not.toContain('<script>')
   })
+
+  it('takes markup with a link as the label', () => {
+    const html = render(
+      <Checkbox
+        id="terms"
+        label={
+          <>
+            I agree to the <a href="/terms">Terms</a>
+          </>
+        }
+      />,
+    )
+
+    expect(html).toContain('I agree to the <a href="/terms">Terms</a>')
+  })
 })

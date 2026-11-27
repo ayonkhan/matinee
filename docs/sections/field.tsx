@@ -41,6 +41,19 @@ export function FieldSection() {
         code={'<Field id="email" label="Email address" type="email" required hint="Used to sign in." />'}
       />
       <CodeBlock
+        title="Tuned for a username"
+        code={`<Field
+  id="username"
+  label="Username"
+  required
+  minlength={3}
+  maxlength={20}
+  autocomplete="username"
+  autocapitalize="none"
+  spellcheck={false}
+/>`}
+      />
+      <CodeBlock
         title="With an error"
         code={'<Field id="site" label="Website" type="url" error="Enter a full address, starting with https://" />'}
       />

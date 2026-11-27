@@ -20,7 +20,20 @@ export type FieldProps = {
     | 'month'
   value?: string | number
   placeholder?: string
+  minlength?: number
   maxlength?: number
+  // A pattern the value must match, such as an email address check. Text-like fields only.
+  pattern?: string
+  // What the browser may fill in, such as "email", "username" or "one-time-code".
+  autocomplete?: string
+  // Puts the cursor in the field when the page loads. Use it on one field per page.
+  autofocus?: boolean
+  // Which keyboard a phone shows, such as "numeric".
+  inputmode?: 'none' | 'text' | 'tel' | 'url' | 'email' | 'numeric' | 'decimal' | 'search'
+  // "none" stops a phone from capitalising the first letter, which suits usernames.
+  autocapitalize?: 'none' | 'sentences' | 'words' | 'characters'
+  // false turns off the red squiggles under words, which suits usernames and codes.
+  spellcheck?: boolean
   min?: string | number
   max?: string | number
   step?: string | number
@@ -56,7 +69,12 @@ export function Field(props: FieldProps) {
           name={props.name}
           rows={rows}
           placeholder={props.placeholder}
+          minlength={props.minlength}
           maxlength={props.maxlength}
+          autocomplete={props.autocomplete}
+          autofocus={props.autofocus}
+          autocapitalize={props.autocapitalize}
+          spellcheck={props.spellcheck}
           required={props.required}
           readonly={props.readonly}
           disabled={props.disabled}
@@ -73,7 +91,14 @@ export function Field(props: FieldProps) {
           type={type}
           value={value}
           placeholder={props.placeholder}
+          minlength={props.minlength}
           maxlength={props.maxlength}
+          pattern={props.pattern}
+          autocomplete={props.autocomplete}
+          autofocus={props.autofocus}
+          inputmode={props.inputmode}
+          autocapitalize={props.autocapitalize}
+          spellcheck={props.spellcheck}
           min={props.min}
           max={props.max}
           step={props.step}

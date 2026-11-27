@@ -30,6 +30,19 @@ export function CheckboxSection() {
         code={`<Checkbox id="remember" name="remember" label="Remember me on this device" />`}
       />
       <CodeBlock
+        title="A label with a link"
+        code={`<Checkbox
+  id="terms"
+  name="terms"
+  required
+  label={
+    <>
+      I agree to the <a href="/terms">Terms</a>
+    </>
+  }
+/>`}
+      />
+      <CodeBlock
         title="A group"
         code={`<CheckboxGroup
   id="topics"
