@@ -37,6 +37,17 @@ export function TopBarSection() {
           user={{ ...barUser, open: true }}
         />
       </div>
+      <p class="type-hint">
+        Signed out, the button shows on every screen, and a quieter link such as Sign in sits beside it. The brand name
+        can be markup, like a coloured dot.
+      </p>
+      <div class="overflow-hidden rounded-card border border-line">
+        <TopBar
+          brand={{ name: 'Matinee', href: '#' }}
+          secondary={{ label: 'Sign in', href: '#' }}
+          action={{ label: 'Sign up', href: '#' }}
+        />
+      </div>
       <CodeBlock
         title="Basic use"
         code={`<TopBar
@@ -44,6 +55,14 @@ export function TopBarSection() {
   links={[{ label: 'Home', href: '/', current: true }]}
   action={{ label: 'New', href: '/new' }}
   user={{ name: 'swift-raven-5065', menu: [{ label: 'Settings', href: '/settings' }] }}
+/>`}
+      />
+      <CodeBlock
+        title="Signed out"
+        code={`<TopBar
+  brand={{ name: <>mfdb<span class="text-accent">.</span></>, href: '/' }}
+  secondary={{ label: 'Sign in', href: '/sign-in' }}
+  action={{ label: 'Sign up', href: '/sign-up' }}
 />`}
       />
       <CodeBlock

@@ -1,3 +1,4 @@
+import type { Child } from 'hono/jsx'
 import { Avatar } from './avatar'
 import { Button } from './button'
 import { type ContentWidth, widths } from './width'
@@ -16,9 +17,13 @@ export type TopBarMenuItem = {
 }
 
 export type TopBarProps = {
-  brand: { name: string; href: string }
+  // The name can be text or markup, for example a name with a coloured dot.
+  brand: { name: Child; href: string }
   links?: TopBarLink[]
+  // The main button. When nobody is signed in it shows on every screen. When someone is, only from sm up.
   action?: { label: string; href: string }
+  // A quieter link next to the action, such as Sign in. Only shown when nobody is signed in.
+  secondary?: { label: string; href: string }
   user?: {
     name: string
     avatarSrc?: string
@@ -35,7 +40,7 @@ const focus = 'focus-visible:outline-2 focus-visible:outline-offset-2 focus-visi
 const menuItem = `block w-full cursor-pointer rounded-control px-3 py-2 text-left font-sans text-sm text-ink no-underline hover:bg-raised ${focus}`
 
 export function TopBar(props: TopBarProps) {
-  const { brand, links = [], action, user, width = 'narrow' } = props
+  const { brand, links = [], action, secondary, user, width = 'narrow' } = props
 
   return (
     <header class={['border-b border-line bg-card', props.class ?? ''].filter(Boolean).join(' ')}>
@@ -61,8 +66,17 @@ export function TopBar(props: TopBarProps) {
         ) : null}
 
         <div class="ml-auto flex items-center gap-3">
+          {secondary && !user ? (
+            <a
+              href={secondary.href}
+              class={`inline-flex min-h-11 items-center rounded-control px-2 font-sans text-sm font-medium text-muted no-underline hover:text-ink ${focus}`}
+            >
+              {secondary.label}
+            </a>
+          ) : null}
+
           {action ? (
-            <div class="hidden sm:block">
+            <div class={user ? 'hidden sm:block' : undefined}>
               <Button href={action.href}>{action.label}</Button>
             </div>
           ) : null}

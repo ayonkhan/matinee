@@ -108,4 +108,25 @@ describe('TopBar', () => {
     expect(render(<TopBar brand={brand} width="wide" />)).toContain('max-w-6xl')
     expect(render(<TopBar brand={brand} width="wide" />)).not.toContain('max-w-5xl')
   })
+
+  it('takes markup as the brand name', () => {
+    const html = render(<TopBar brand={{ name: <>mfdb<span class="text-accent">.</span></>, href: '/' }} />)
+
+    expect(html).toContain('mfdb<span class="text-accent">.</span>')
+  })
+
+  it('shows the action on every screen when signed out, and only from sm up when signed in', () => {
+    const action = { label: 'Sign up', href: '/sign-up' }
+
+    expect(render(<TopBar brand={brand} action={action} />)).not.toContain('hidden sm:block')
+    expect(render(<TopBar brand={brand} action={action} user={user} />)).toContain('hidden sm:block')
+  })
+
+  it('shows a secondary link only when signed out', () => {
+    const secondary = { label: 'Sign in', href: '/sign-in' }
+
+    expect(render(<TopBar brand={brand} secondary={secondary} />)).toContain('href="/sign-in"')
+    expect(render(<TopBar brand={brand} secondary={secondary} />)).toContain('Sign in')
+    expect(render(<TopBar brand={brand} secondary={secondary} user={user} />)).not.toContain('Sign in')
+  })
 })
