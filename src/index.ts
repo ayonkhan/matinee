@@ -1,4 +1,4 @@
-export { ActionBar } from './components/action-bar'
+export { ActionBar, actionBarScript } from './components/action-bar'
 export type { ActionBarProps } from './components/action-bar'
 export { Avatar } from './components/avatar'
 export type { AvatarProps, AvatarSize } from './components/avatar'

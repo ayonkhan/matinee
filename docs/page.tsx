@@ -1,5 +1,5 @@
 import { raw } from 'hono/html'
-import { bannerScript, Disclosure, SegmentedControl } from '../src'
+import { actionBarScript, bannerScript, Disclosure, SegmentedControl } from '../src'
 import { copyScript } from './code-block'
 import { Section } from './section'
 import { groups, type SectionEntry } from './sections'
@@ -165,6 +165,7 @@ export function Page() {
             </div>
           </div>
           <script>{raw(copyScript)}</script>
+          <script>{raw(actionBarScript)}</script>
           <script>{raw(bannerScript)}</script>
           <script>{raw(sidebarScript)}</script>
         </body>
