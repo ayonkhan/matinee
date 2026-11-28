@@ -10,6 +10,8 @@ export type CheckboxProps = {
   checked?: boolean
   required?: boolean
   disabled?: boolean
+  // The message inlineErrorsScript shows when the browser's checks fail. Without it the browser's own text is used.
+  invalidMessage?: string
   hint?: string
   error?: string
   class?: string
@@ -32,6 +34,7 @@ export function Checkbox(props: CheckboxProps) {
           value={props.value}
           checked={props.checked}
           required={props.required}
+          data-error={props.invalidMessage}
           disabled={disabled}
           aria-invalid={error ? 'true' : undefined}
           aria-describedby={describedBy(id, hint, error)}

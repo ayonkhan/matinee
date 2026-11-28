@@ -34,6 +34,8 @@ export type FieldProps = {
   autocapitalize?: 'none' | 'sentences' | 'words' | 'characters'
   // false turns off the red squiggles under words, which suits usernames and codes.
   spellcheck?: boolean
+  // The message inlineErrorsScript shows when the browser's checks fail. Without it the browser's own text is used.
+  invalidMessage?: string
   min?: string | number
   max?: string | number
   step?: string | number
@@ -75,6 +77,7 @@ export function Field(props: FieldProps) {
           autofocus={props.autofocus}
           autocapitalize={props.autocapitalize}
           spellcheck={props.spellcheck}
+          data-error={props.invalidMessage}
           required={props.required}
           readonly={props.readonly}
           disabled={props.disabled}
@@ -99,6 +102,7 @@ export function Field(props: FieldProps) {
           inputmode={props.inputmode}
           autocapitalize={props.autocapitalize}
           spellcheck={props.spellcheck}
+          data-error={props.invalidMessage}
           min={props.min}
           max={props.max}
           step={props.step}

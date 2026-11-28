@@ -88,4 +88,11 @@ describe('CodeInput', () => {
     expect(has(render(<CodeInput id="a" label="Code" autofocus />), 'autofocus')).toBe(true)
     expect(has(render(<CodeInput id="a" label="Code" />), 'autofocus')).toBe(false)
   })
+
+  it('carries the message to show when the browser checks fail', () => {
+    expect(render(<CodeInput id="a" label="Code" invalidMessage="Enter the 6 digit code." />)).toContain(
+      'data-error="Enter the 6 digit code."',
+    )
+    expect(render(<CodeInput id="a" label="Code" />)).not.toContain('data-error')
+  })
 })

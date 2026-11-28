@@ -12,6 +12,8 @@ export type CodeInputProps = {
   disabled?: boolean
   // Puts the cursor in the field when the page loads. Use it on one field per page.
   autofocus?: boolean
+  // The message inlineErrorsScript shows when the browser's checks fail. Without it the browser's own text is used.
+  invalidMessage?: string
   class?: string
 }
 
@@ -44,6 +46,7 @@ export function CodeInput(props: CodeInputProps) {
         autocomplete="one-time-code"
         pattern="[0-9]*"
         autofocus={props.autofocus}
+        data-error={props.invalidMessage}
         required={props.required}
         disabled={disabled}
         aria-invalid={error ? 'true' : undefined}

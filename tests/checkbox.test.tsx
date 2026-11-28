@@ -87,4 +87,11 @@ describe('Checkbox', () => {
 
     expect(html).toContain('I agree to the <a href="/terms">Terms</a>')
   })
+
+  it('carries the message to show when the browser checks fail', () => {
+    expect(render(<Checkbox id="a" label="A" invalidMessage="Please agree to continue." />)).toContain(
+      'data-error="Please agree to continue."',
+    )
+    expect(render(<Checkbox id="a" label="A" />)).not.toContain('data-error')
+  })
 })

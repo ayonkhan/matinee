@@ -131,4 +131,11 @@ describe('Field', () => {
     expect(html).toContain('autocomplete="off"')
     expect(html).toContain('spellcheck="false"')
   })
+
+  it('carries the message to show when the browser checks fail', () => {
+    expect(render(<Field id="a" label="A" invalidMessage="Enter an email address." />)).toContain(
+      'data-error="Enter an email address."',
+    )
+    expect(render(<Field id="a" label="A" />)).not.toContain('data-error')
+  })
 })
