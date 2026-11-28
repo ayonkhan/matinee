@@ -13,6 +13,7 @@ import { CopyBlockSection } from './copy-block'
 import { CoverSection } from './cover'
 import { DisclosureSection } from './disclosure'
 import { EmptyStateSection } from './empty-state'
+import { ErrorPageSection } from './error-page'
 import { FieldSection } from './field'
 import { FieldsetSection } from './fieldset'
 import { FileInputSection } from './file-input'
@@ -77,6 +78,7 @@ export const groups: SectionGroup[] = [
       { id: 'cover', title: 'Cover', Component: CoverSection, category: 'Display' },
       { id: 'disclosure', title: 'Disclosure', Component: DisclosureSection, category: 'Display' },
       { id: 'empty-state', title: 'EmptyState', Component: EmptyStateSection, category: 'Display' },
+      { id: 'error-page', title: 'ErrorPage', Component: ErrorPageSection, category: 'Display' },
       { id: 'list', title: 'List', Component: ListSection, category: 'Display' },
       { id: 'notice', title: 'Notice', Component: NoticeSection, category: 'Display' },
       { id: 'page-header', title: 'PageHeader', Component: PageHeaderSection, category: 'Display' },
