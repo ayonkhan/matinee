@@ -5,6 +5,8 @@ export type CodeInputProps = {
   label: string
   name?: string
   length?: number
+  // Lets a pasted code keep its spaces or dashes, such as 123 456 or 123-456. Clean it on the server before checking.
+  allowSeparators?: boolean
   value?: string
   hint?: string
   error?: string
@@ -22,7 +24,7 @@ const size = 'px-4 py-3 indent-[0.4em] text-center font-mono text-2xl tracking-[
 
 // A verification code in one field. It stays text, not a number, so a leading zero is never lost.
 export function CodeInput(props: CodeInputProps) {
-  const { id, label, length = 6, value, hint, error, disabled } = props
+  const { id, label, length = 6, allowSeparators, value, hint, error, disabled } = props
 
   return (
     <div class={['flex flex-col gap-2', props.class ?? ''].filter(Boolean).join(' ')}>
@@ -41,10 +43,10 @@ export function CodeInput(props: CodeInputProps) {
         id={id}
         name={props.name}
         value={value}
-        maxlength={length}
+        maxlength={allowSeparators ? length + 4 : length}
         inputmode="numeric"
         autocomplete="one-time-code"
-        pattern="[0-9]*"
+        pattern={allowSeparators ? '[0-9 \\-]*' : '[0-9]*'}
         autofocus={props.autofocus}
         data-error={props.invalidMessage}
         required={props.required}

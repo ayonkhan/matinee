@@ -95,4 +95,19 @@ describe('CodeInput', () => {
     )
     expect(render(<CodeInput id="a" label="Code" />)).not.toContain('data-error')
   })
+
+  it('can accept a pasted code with spaces or dashes', () => {
+    const html = render(<CodeInput id="a" label="Code" allowSeparators />)
+
+    expect(html).toContain('maxlength="10"')
+    expect(html).toContain('pattern="[0-9 \\-]*"')
+    expect(render(<CodeInput id="a" label="Code" length={4} allowSeparators />)).toContain('maxlength="8"')
+  })
+
+  it('accepts digits only unless separators are allowed', () => {
+    const html = render(<CodeInput id="a" label="Code" />)
+
+    expect(html).toContain('maxlength="6"')
+    expect(html).toContain('pattern="[0-9]*"')
+  })
 })
