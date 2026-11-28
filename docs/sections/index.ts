@@ -19,6 +19,7 @@ import { FieldsetSection } from './fieldset'
 import { FileInputSection } from './file-input'
 import { FooterSection } from './footer'
 import { GettingStartedSection } from './getting-started'
+import { HeroSection } from './hero'
 import { ListSection } from './list'
 import { NoticeSection } from './notice'
 import { PageHeaderSection } from './page-header'
@@ -79,6 +80,7 @@ export const groups: SectionGroup[] = [
       { id: 'disclosure', title: 'Disclosure', Component: DisclosureSection, category: 'Display' },
       { id: 'empty-state', title: 'EmptyState', Component: EmptyStateSection, category: 'Display' },
       { id: 'error-page', title: 'ErrorPage', Component: ErrorPageSection, category: 'Display' },
+      { id: 'hero', title: 'Hero', Component: HeroSection, category: 'Display' },
       { id: 'list', title: 'List', Component: ListSection, category: 'Display' },
       { id: 'notice', title: 'Notice', Component: NoticeSection, category: 'Display' },
       { id: 'page-header', title: 'PageHeader', Component: PageHeaderSection, category: 'Display' },
